@@ -1,0 +1,31 @@
+.Cartas {
+    width: 100px;
+    border-radius: 10px; 
+    box-sizing: border-box;
+    margin: 5px;
+
+    &:hover {
+        border: 2px solid red;
+        cursor: pointer;
+    }
+
+    &:focus {
+        outline: none;
+    }
+}
+
+#Jugador-Mano, #Cpu-Mano {
+    background-color: #34495e;
+}
+
+#Jugador-Mesa, #Cpu-Mesa {
+    background-color: #27ae60;
+}
+
+#Jugador-Mesa, #Cpu-Mesa, #Jugador-Mano, #Cpu-Mano {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0.5px solid #333;
+    height: 24.8%;
+}
