@@ -1,10 +1,10 @@
 class Mazo {
     constructor() {
-        this.mazo = [];
+        this.cartas = [];
     };
 
     nuevoMazo() {
-        return this.mazo = [
+        return this.cartas = [
             new Carta("1 de Espada", "Espadas", 14, "img/espadas_1.jpg"),
             new Carta("1 de Basto", "Bastos", 13, "img/bastos_1.jpg"),
             new Carta("7 de Espadas", "Espadas", 12, "img/espadas_7.jpg"),
@@ -49,10 +49,12 @@ class Mazo {
     };
 
     quitarCartaDelMazo(nombre) {
-        this.mazo.map((carta, index) => {
+        this.cartas.map((carta, index) => {
             if(nombre == carta.nombre) {
-                this.mazo.slice(index, 1);
+                this.cartas.splice(index, 1);
             };
         });
     };
 };
+
+const mazo = new Mazo();

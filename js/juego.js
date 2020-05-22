@@ -4,12 +4,7 @@ let turno_Jugador = false, turno_CPU = false;
 const mentir = [Miente = true, Miente = false];
 const acepta = [Quiero = true, Quiero = false];
 
-const textos = [
-    ["Quiero", "No quiero"],
-    ["Envido", "Real Envido", "Falta Envido"],
-    ["Truco", "Quiero Retruco", "Quiero vale cuatro"],
-    "Me voy al mazo",
-];
+
 
 let carta_Imagen1 = document.getElementById("carta1"),
     carta_Imagen2 = document.getElementById("carta2"),
