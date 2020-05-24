@@ -55,6 +55,12 @@ class Mazo {
             };
         });
     };
+
+    accion(funcion) {
+        return new Promise((resolve, reject) => {
+            resolve(funcion);
+        });
+    };
 };
 
 const mazo = new Mazo();
