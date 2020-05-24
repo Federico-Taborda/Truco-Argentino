@@ -1,7 +1,9 @@
 class Jugador {
-    constructor(nombre){
+    constructor(nombre, puntos){
         this.nombre = nombre;
         this.mano = [];
+        this.turnos = 3;
+        this.puntos = puntos;
         this.textos = {
             quiero: "Quiero",
             noQuiero: "No quiero",

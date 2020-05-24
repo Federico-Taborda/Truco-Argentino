@@ -1,4 +1,4 @@
-# Tareas Logica
+# Tareas Lógica
 
 ## Cada partida tiene: 
 
@@ -10,19 +10,20 @@
 
 ## Cada carta tiene
 
-- [ ] Nombre
-- [ ] Valor
-- [ ] ValorPropio
-- [ ] Palo
-- [ ] Url
+- [x] Nombre
+- [x] Valor
+- [x] Valor Propio
+- [x] Palo
+- [x] Url
+- [x] Sonido
 
 ## El mazo tiene 
 
-- [ ] Cartas
+- [x] Cartas
 
 ## El mazo puede
 
-- [ ] Quitar cartas
+- [x] Quitar cartas
 
 ## Cada tabla de puntos tiene
 
@@ -34,9 +35,11 @@
 
 ## Cada jugador tiene
 
-- [ ] Nombre 
-- [ ] Cartas
-- [ ] Textos
+- [x] Nombre 
+- [x] Cartas
+- [x] Textos
+- [x] Turnos
+- [x] Puntos
 
 ## Cada jugador puede
 
@@ -46,13 +49,12 @@
 - [ ] Rechazar
 - [ ] Jugar Carta
 - [ ] Jugar Truco
-- [ ] Jugar ReTruco
-- [ ] Jugar ReTruco
-- [ ] Jugar ValeCuatro
+- [ ] Jugar Re Truco
+- [ ] Jugar Vale Cuatro
 - [ ] Jugar Envido
-- [ ] Jugar RealEnvido
-- [ ] Jugar FaltaEnvido
+- [ ] Jugar Real Envido
+- [ ] Jugar Falta Envido
 - [ ] Jugar Flor
-- [ ] Jugar ContraFlor
-- [ ] Jugar ContraFlorAlResto
+- [ ] Jugar Contra Flor
+- [ ] Jugar Contra Flor Al Resto
 
