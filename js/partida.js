@@ -16,7 +16,7 @@ class Partida {
 
     actualizarPuntosJugador(nombre, puntos) {
         this.tabla.jugadores.forEach(jugador => {
-            if(jugador.nombre == "nombre") {
+            if(jugador.nombre == nombre) {
                 jugador.puntos = puntos;
             };
         });

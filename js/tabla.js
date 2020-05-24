@@ -1,6 +1,6 @@
 class Tabla {
-    constructor(puntos) {
-        this.puntos = puntos; // 15p o 30p
+    constructor() {
+        this.puntos = 0; // 15p o 30p
         this.jugadores = [];
     };
 
