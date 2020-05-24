@@ -4,9 +4,9 @@
 
 - [x] Jugadores
 - [x] Mazo
-- [ ] Turno actual
 - [x] Puntos
 - [x] Tabla
+- [x] Log
 
 ## Cada partida puede:
 
@@ -20,6 +20,10 @@
 - [ ] Mostrar cartas de los jugadores en pantalla
 - [ ] Mostrar la carta jugada
 
+___
+
+
+
 ## Cada carta tiene:
 
 - [x] Nombre
@@ -27,7 +31,12 @@
 - [x] Valor Propio
 - [x] Palo
 - [x] Url
+- [ ] Puntos para el envido
 - [ ] Sonido
+
+___
+
+
 
 ## El mazo tiene:
 
@@ -36,6 +45,10 @@
 ## El mazo puede:
 
 - [x] Quitar cartas
+
+___
+
+
 
 ## Cada tabla de puntos tiene:
 
@@ -47,21 +60,28 @@
 - [x] Actualizar los puntos de los jugadores en la tabla
 - [ ] Dibujar los jugadores y puntos en la tabla
 
+___
+
+
+
 ## Cada jugador tiene:
 
 - [x] Nombre 
-- [x] Cartas
+- [x] Cartas en mano
+- [ ] Cartas jugadas
 - [x] Textos
 - [x] Turnos
+- [x] Turno Actual
 - [x] Puntos
+- [x] Genero
 - [ ] Sonido
 
 ## Cada jugador puede:
 
 - [x] Tomar Cartas
-- [ ] Rendirse
-- [ ] Aceptar
-- [ ] Rechazar
+- [ ] Rendir Mano
+- [x] Aceptar
+- [x] Rechazar
 - [ ] Jugar Carta
 - [ ] Jugar Truco
 - [ ] Jugar Re Truco
@@ -73,4 +93,18 @@
 - [ ] Jugar Contra Flor
 - [ ] Jugar Contra Flor Al Resto
 - [ ] Hablar
+- [ ] Generar log
+
+___
+
+
+
+## El log tiene:
+
+- [x] Total de log
+- [x] Nuevos log
+
+## El log puede:
+
+- [ ] Imprimir log
 
