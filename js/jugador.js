@@ -1,8 +1,11 @@
 class Jugador {
-    constructor(nombre){
+    constructor(nombre, genero){
         this.nombre = nombre;
+        this.genero = genero;
         this.mano = [];
+        this.jugadas = [];
         this.turnos = 3;
+        this.turnoActual = false;
         this.puntos = 0;
         this.textos = {
             quiero: "Quiero",
@@ -36,6 +39,63 @@ class Jugador {
     jugada(texto) {
         return {
             jugada: texto
+        };
+    };
+
+    truco() {
+        // truco
+    };
+
+    reTruco() {
+        // retruco
+    };
+
+    envido() {
+        // envido
+    };
+
+    realEnvido() {
+        // real envido
+    };
+
+    faltaEnvido() {
+        // falta envido
+    };
+
+    flor() {
+        // flor
+    };
+
+    contraFlor() {
+        // contra flor
+    };
+
+    contraFlorAlResto() {
+        // contra flor al resto
+    };
+
+    jugarCarta(carta) {
+        // jugar carta
+    };
+
+    aceptar_rechazar(respuesta) {
+        // Si es true se acepta el canto, si es false se rechaza.
+        return respuesta;
+    };;
+
+    rendirMano() {
+        return partida.finalizarMano();
+    };
+
+    generarLog() {
+        // generar log
+    };
+
+    hablar() {
+        if(this.genero == "Hombre") {
+            // SpeechSyntesis Hombre
+        }else if(this.genero == "Mujer") {
+            // SpeechSyntesis Mujer
         };
     };
 
