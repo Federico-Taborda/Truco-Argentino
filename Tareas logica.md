@@ -2,38 +2,47 @@
 
 ## Cada partida tiene: 
 
-- [ ] Jugador
-- [ ] Mazo
-- [ ] Cartas
-- [ ] Puntos
-- [ ] Repartir nuevamente
+- [x] Jugadores
+- [x] Mazo
+- [ ] Turno actual
+- [x] Puntos
+- [x] Tabla
 
-## Cada carta tiene
+## Cada partida puede:
+
+- [x] Sumar puntos a un jugador
+
+- [x] Repartir nuevamente
+- [x] Agregar jugadores a la tabla
+
+## Cada carta tiene:
 
 - [x] Nombre
 - [x] Valor
 - [x] Valor Propio
 - [x] Palo
 - [x] Url
-- [x] Sonido
+- [ ] Sonido
 
-## El mazo tiene 
+## El mazo tiene:
 
 - [x] Cartas
 
-## El mazo puede
+## El mazo puede:
 
 - [x] Quitar cartas
 
-## Cada tabla de puntos tiene
+## Cada tabla de puntos tiene:
 
-- [ ] 15p o 30p
+- [x] 15p o 30p
+- [ ] Puntos de jugadores
 
-## Cada tabla puede 
+## Cada tabla puede:
 
-- [ ] Agregar puntos
+- [x] Actualizar puntos
+- [ ] Dibujar los jugadores en la tabla
 
-## Cada jugador tiene
+## Cada jugador tiene:
 
 - [x] Nombre 
 - [x] Cartas
@@ -41,9 +50,9 @@
 - [x] Turnos
 - [x] Puntos
 
-## Cada jugador puede
+## Cada jugador puede:
 
-- [ ] Tomar Cartas
+- [x] Tomar Cartas
 - [ ] Rendirse
 - [ ] Aceptar
 - [ ] Rechazar
