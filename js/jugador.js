@@ -20,20 +20,28 @@ class Jugador {
     };
 
     cartaRandom() {
+        // Cambiar mazo a partida.mazo
         let carta = mazo.cartas[Math.floor(Math.random() * mazo.cartas.length)];
         mazo.quitarCartaDelMazo(carta.nombre);
         return carta;
     };
 
     async tomarCartas(){
-        this.mano[0] = await this.accion();
-        this.mano[1] = await this.accion();
-        this.mano[2] = await this.accion();
+        const { mano, accion, cartaRandom } = this;
+        mano[0] = await accion(cartaRandom());
+        mano[1] = await accion(cartaRandom());
+        mano[2] = await accion(cartaRandom());
     };
 
-    accion() {
+    jugada(texto) {
+        return {
+            jugada: texto
+        };
+    };
+
+    accion(funcion) {
         return new Promise((resolve, reject) => {
-            resolve(this.cartaRandom());
+            resolve(funcion);
         });
     };
 };

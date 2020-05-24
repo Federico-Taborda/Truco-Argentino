@@ -5,8 +5,10 @@ class Tabla {
     };
 
     dibujarJugadoresEnLaTabla() {
+        let tablero = document.getElementById("Panel-Puntajes");
         this.jugadores.forEach(jugador => {
-            // dibujar jugadores en la tabla
+            const { nombre, puntos } = jugador;
+            tablero.innerHTML += `<h2 id="${nombre}">${nombre}: ${puntos}</h2>`;
         });
     };
 

@@ -15,7 +15,8 @@ class Partida {
     };
 
     actualizarPuntosJugador(nombre, puntos) {
-        this.tabla.jugadores.forEach(jugador => {
+        const { tabla } = this;
+        tabla.jugadores.forEach(jugador => {
             if(jugador.nombre == nombre) {
                 jugador.puntos = puntos;
             };
@@ -23,11 +24,20 @@ class Partida {
     };
 
     agregarJugadoresTabla() {
-        this.jugadores.forEach(jugador => {
-            this.tabla.jugadores.push({
+        const { jugadores, tabla } = this;
+        jugadores.forEach(jugador => {
+            tabla.jugadores.push({
                 nombre: jugador.nombre,
                 puntos: jugador.puntos
             });
         });
+    };
+
+    finalizarPartida() {
+        // finalizar la partida
+    };
+
+    finalizarPartida() {
+        // finalizar la mano
     };
 };

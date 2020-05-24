@@ -14,6 +14,11 @@
 
 - [x] Repartir nuevamente
 - [x] Agregar jugadores a la tabla
+- [x] Actualizar puntos de los jugadores
+- [ ] Finalizar la partida
+- [ ] Finalizar la mano
+- [ ] Mostrar cartas de los jugadores en pantalla
+- [ ] Mostrar la carta jugada
 
 ## Cada carta tiene:
 
@@ -35,12 +40,12 @@
 ## Cada tabla de puntos tiene:
 
 - [x] 15p o 30p
-- [ ] Puntos de jugadores
+- [x] Jugadores
 
 ## Cada tabla puede:
 
-- [x] Actualizar puntos
-- [ ] Dibujar los jugadores en la tabla
+- [x] Actualizar los puntos de los jugadores en la tabla
+- [ ] Dibujar los jugadores y puntos en la tabla
 
 ## Cada jugador tiene:
 
@@ -49,6 +54,7 @@
 - [x] Textos
 - [x] Turnos
 - [x] Puntos
+- [ ] Sonido
 
 ## Cada jugador puede:
 
@@ -66,4 +72,5 @@
 - [ ] Jugar Flor
 - [ ] Jugar Contra Flor
 - [ ] Jugar Contra Flor Al Resto
+- [ ] Hablar
 
