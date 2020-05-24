@@ -11,7 +11,6 @@
 ## Cada partida puede:
 
 - [x] Sumar puntos a un jugador
-
 - [x] Repartir nuevamente
 - [x] Agregar jugadores a la tabla
 - [x] Actualizar puntos de los jugadores
@@ -21,8 +20,6 @@
 - [ ] Mostrar la carta jugada
 
 ___
-
-
 
 ## Cada carta tiene:
 
@@ -36,8 +33,6 @@ ___
 
 ___
 
-
-
 ## El mazo tiene:
 
 - [x] Cartas
@@ -47,8 +42,6 @@ ___
 - [x] Quitar cartas
 
 ___
-
-
 
 ## Cada tabla de puntos tiene:
 
@@ -61,8 +54,6 @@ ___
 - [ ] Dibujar los jugadores y puntos en la tabla
 
 ___
-
-
 
 ## Cada jugador tiene:
 
@@ -96,8 +87,6 @@ ___
 - [ ] Generar log
 
 ___
-
-
 
 ## El log tiene:
 
