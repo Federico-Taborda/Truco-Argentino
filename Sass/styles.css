@@ -111,4 +111,9 @@
   border: 0.5px solid #333;
   height: 24.8%;
 }
+
+.cartasEnMano {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
 /*# sourceMappingURL=styles.css.map */
