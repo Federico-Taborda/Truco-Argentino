@@ -1,9 +1,10 @@
 class Partida {
-    constructor(jugadores, mazo, puntos, tabla) {
+    constructor(jugadores, mazo, puntos, tabla, log) {
         this.jugadores = jugadores; // Array con todos los jugadores
         this.mazo = mazo;
         this.puntos = puntos;
         this.tabla = tabla;
+        this.log = log;
     };
 
     repartirOtroMazo() {
@@ -37,7 +38,7 @@ class Partida {
         // finalizar la partida
     };
 
-    finalizarPartida() {
+    finalizarMano() {
         // finalizar la mano
     };
 };
