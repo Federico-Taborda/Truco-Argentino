@@ -9,12 +9,22 @@
 // console.log(cpu.mano)
 
 const partida = new Partida(
-    [new Jugador("Fede"), new Jugador("CPU")],
+    [new Jugador("Fede", "Hombre"), new Jugador("CPU", "Mujer")],
     new Mazo(),
     30,
-    new Tabla()
+    new Tabla(),
+    new Log
 );
 
 console.log(partida.jugadores)
 partida.agregarJugadoresTabla();
 partida.tabla.dibujarJugadoresEnLaTabla();
+
+// function prueba() {
+//     let doc = document.getElementById("Mesa");
+//     doc.addEventListener("click", () => {
+//         console.log("click")
+//     })
+// }
+
+// prueba();
