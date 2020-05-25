@@ -21,7 +21,6 @@ partida.tabla.dibujarJugadoresEnLaTabla();
 
 
 // Botones de accion
-let btn_repartir = document.getElementById("repartir");
 let btn_truco = document.getElementById("truco");
 let btn_re_truco = document.getElementById("re-truco");
 let btn_vale_cuatro = document.getElementById("vale-cuatro");
