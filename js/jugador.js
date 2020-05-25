@@ -91,7 +91,10 @@ class Jugador {
         // generar log
     };
 
-    hablar() {
+    hablar(dialogo) {
+        const speach = new SpeechSynthesisUtterance(dialogo);
+        window.speechSynthesis.speak(speach);
+        
         if(this.genero == "Hombre") {
             // SpeechSyntesis Hombre
         }else if(this.genero == "Mujer") {
