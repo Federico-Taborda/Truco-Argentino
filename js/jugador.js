@@ -18,6 +18,7 @@ class Jugador {
             quieroValeCuatro: "Quiero vale cuatro",
             flor: "Flor",
             contraFlor: "Contra Flor",
+            contraFlorAlResto: "Contra Flor al Resto",
             meVoy: "Me voy al mazo"
         };
     };
@@ -43,47 +44,79 @@ class Jugador {
     };
 
     truco() {
+        const { hablar, textos } = this;
+        hablar(textos.truco);
         // truco
     };
-
+    
     reTruco() {
+        const { hablar, textos } = this;
+        hablar(textos.quieroRetruco);
         // retruco
     };
 
+    valeCuatro() {
+        const { hablar, textos } = this;
+        hablar(textos.quieroValeCuatro);
+        // retruco
+    };
+    
     envido() {
+        const { hablar, textos } = this;
+        hablar(textos.envido);
         // envido
     };
-
+    
     realEnvido() {
+        const { hablar, textos } = this;
+        hablar(textos.realEnvido);
         // real envido
     };
-
+    
     faltaEnvido() {
+        const { hablar, textos } = this;
+        hablar(textos.faltaEnvido);
         // falta envido
     };
-
+    
     flor() {
+        const { hablar, textos } = this;
+        hablar(textos.flor);
         // flor
     };
-
+    
     contraFlor() {
+        const { hablar, textos } = this;
+        hablar(textos.contraFlor);
         // contra flor
     };
-
+    
     contraFlorAlResto() {
+        const { hablar, textos } = this;
+        hablar(textos.contraFlorAlResto);
         // contra flor al resto
     };
-
+    
     jugarCarta(carta) {
         // jugar carta
     };
-
+    
     aceptar_rechazar(respuesta) {
         // Si es true se acepta el canto, si es false se rechaza.
+        const { textos } = this;
+        if(respuesta) {
+            this.hablar(textos.quiero)
+        }else{
+            this.hablar(textos.noQuiero)
+        };
+        
         return respuesta;
-    };;
-
+    };
+    
     rendirMano() {
+        const { hablar, textos } = this;
+        hablar(textos.meVoy);
+
         return partida.finalizarMano();
     };
 
@@ -94,7 +127,7 @@ class Jugador {
     hablar(dialogo) {
         const speach = new SpeechSynthesisUtterance(dialogo);
         window.speechSynthesis.speak(speach);
-        
+
         if(this.genero == "Hombre") {
             // SpeechSyntesis Hombre
         }else if(this.genero == "Mujer") {
