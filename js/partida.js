@@ -1,10 +1,9 @@
 class Partida {
-    constructor(jugadores, mazo, puntos, tabla, log) {
-        this.jugadores = jugadores; // Array con todos los jugadores
+    constructor(jugadores, mazo, puntos, tabla) {
+        this.jugadores = jugadores;
         this.mazo = mazo;
         this.puntos = puntos;
         this.tabla = tabla;
-        this.log = log;
     };
 
     repartirOtroMazo() {

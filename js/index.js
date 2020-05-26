@@ -2,8 +2,7 @@ const partida = new Partida(
     [new Jugador("Fede", "Hombre"), new Jugador("CPU", "Mujer")],
     new Mazo(),
     30,
-    new Tabla(),
-    new Log
+    new Tabla()
 );
 
 partida.agregarJugadoresTabla();
