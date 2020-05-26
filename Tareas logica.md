@@ -6,7 +6,6 @@
 - [x] Mazo
 - [x] Puntos
 - [x] Tabla
-- [x] Log
 
 ## Cada partida puede:
 
@@ -15,6 +14,8 @@
 - [x] Agregar jugadores a la tabla
 - [x] Actualizar puntos de los jugadores
 - [ ] Ocultar Acciones
+- [ ] Iniciar partida
+- [ ] Iniciar mano
 - [ ] Finalizar la partida
 - [ ] Finalizar la mano
 - [ ] Mostrar cartas de los jugadores en pantalla
@@ -74,10 +75,10 @@ ___
 - [ ] Rendir Mano
 - [x] Aceptar
 - [x] Rechazar
-- [ ] Jugar alguna acción
-- [ ] Escuchar alguna acción
+- [x] Jugar alguna acción
+- [x] Escuchar alguna acción
 - [ ] Hablar
-- [ ] Generar log
+- [x] Generar log
 
 ___
 

@@ -37,16 +37,15 @@ class Jugador {
         mano[2] = await accion(cartaRandom());
     };
 
-    jugada(texto) {
-        return {
-            jugada: texto
-        };
-    };
-
     truco() {
         this.hablar(this.textos.truco);
         this.generarLog(this.textos.truco);
-        // truco
+
+        this.escucharCanto("quiero", this.jugarCarta);
+        this.escucharCanto("no-quiero", this.jugarCarta);
+        this.escucharCanto("envido", this.jugarCarta);
+        this.escucharCanto("re-truco", this.jugarCarta);
+        this.escucharCanto("al-mazo", this.jugarCarta);
     };
     
     reTruco() {
@@ -97,8 +96,10 @@ class Jugador {
         // contra flor al resto
     };
     
-    jugarCarta(carta) {
+    jugarCarta(nombre, carta) {
         // jugar carta
+
+        console.log(nombre, `juega carta`);
     };
     
     aceptar_rechazar(respuesta) {
@@ -119,7 +120,14 @@ class Jugador {
         
         return partida.finalizarMano();
     };
-    
+
+    escucharCanto(elemento, funcion) {
+        document.getElementById(`${elemento}`).addEventListener("click", () => {
+            // se debe pasar los argumentos de this porque luego "this" se vuelve undefined
+            funcion(this.nombre);
+        });
+    };
+
     generarLog(texto) {
         const { nombre } = this;
         let log = document.getElementById("Logs");
