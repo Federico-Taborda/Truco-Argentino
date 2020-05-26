@@ -1,13 +1,3 @@
-// const jugador = new Jugador("Jugador");
-// const cpu = new Jugador("CPU");
-
-// mazo.nuevoMazo();
-// console.log(mazo.cartas.length)
-// jugador.tomarCartas();
-// cpu.tomarCartas();
-// console.log(jugador.mano)
-// console.log(cpu.mano)
-
 const partida = new Partida(
     [new Jugador("Fede", "Hombre"), new Jugador("CPU", "Mujer")],
     new Mazo(),

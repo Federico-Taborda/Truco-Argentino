@@ -5,7 +5,7 @@ class Tabla {
     };
 
     dibujarJugadoresEnLaTabla() {
-        let tablero = document.getElementById("Panel-Puntajes");
+        let tablero = document.getElementById("Puntajes");
         this.jugadores.forEach(jugador => {
             const { nombre, puntos } = jugador;
             tablero.innerHTML += `<h2 id="${nombre}">${nombre}: ${puntos}</h2>`;

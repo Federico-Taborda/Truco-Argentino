@@ -1,4 +1,4 @@
-#Panel-Puntajes {
+#Panel {
     background-color: #475577;
     width: 30%;
     text-align: center;
@@ -7,5 +7,13 @@
     h1, h2 {
         margin: 5px;
         padding: 5px;
+    }
+
+    #Puntajes {
+        height: 30%;
+    }
+    
+    #Logs {
+
     }
 }

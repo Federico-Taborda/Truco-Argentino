@@ -40,16 +40,20 @@
   height: 25%;
 }
 
-#Panel-Puntajes {
+#Panel {
   background-color: #475577;
   width: 30%;
   text-align: center;
   margin: 4px 4px 4px 0px;
 }
 
-#Panel-Puntajes h1, #Panel-Puntajes h2 {
+#Panel h1, #Panel h2 {
   margin: 5px;
   padding: 5px;
+}
+
+#Panel #Puntajes {
+  height: 30%;
 }
 
 #Panel-Acciones {
