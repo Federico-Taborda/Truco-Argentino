@@ -7,6 +7,7 @@ const partida = new Partida(
 
 partida.agregarJugadoresTabla();
 partida.tabla.dibujarJugadoresEnLaTabla();
+partida.jugadores[1].truco();
 
 // Botones de accion
 let btn_truco = document.getElementById("truco");
@@ -22,7 +23,7 @@ let btn_quiero = document.getElementById("quiero");
 let btn_no_quiero = document.getElementById("no-quiero");
 let btn_al_mazo = document.getElementById("al-mazo");
 
-btn_truco.addEventListener("click", () => {
+/* btn_truco.addEventListener("click", () => {
     partida.jugadores[0].truco();
 });
 
@@ -68,7 +69,7 @@ btn_no_quiero.addEventListener("click", () => {
 
 btn_al_mazo.addEventListener("click", () => {
     partida.jugadores[0].rendirMano();
-});
+}); */
 
 // function prueba() {
 //     let doc = document.getElementById("Mesa");
