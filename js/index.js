@@ -5,6 +5,7 @@ const partida = new Partida(
     new Tabla()
 );
 
+partida.mazo.nuevoMazo();
 partida.agregarJugadoresTabla();
 partida.tabla.dibujarJugadoresEnLaTabla();
 partida.jugadores[1].truco();

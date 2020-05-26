@@ -30,7 +30,7 @@ ___
 - [x] Valor Propio
 - [x] Palo
 - [x] Url
-- [ ] Puntos para el envido
+- [x] Puntos para el envido
 - [ ] Sonido
 
 ___
