@@ -56,6 +56,10 @@
   height: 30%;
 }
 
+#Panel #Logs p {
+  margin: 5px;
+}
+
 #Panel-Acciones {
   margin: 4px;
   padding: 20px;
