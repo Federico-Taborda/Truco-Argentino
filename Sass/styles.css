@@ -16,15 +16,35 @@
 
 #Mesa {
   width: 80%;
-  margin-top: 4px;
-  margin-bottom: 4px;
+  margin: 4px 0px 4px 4px;
+}
+
+#Mesa #Jugador-Mano, #Mesa #Cpu-Mano {
+  background-color: #27ae60;
+}
+
+#Mesa #Jugador-Mesa, #Mesa #Cpu-Mesa {
+  background-color: #61BD6D;
+}
+
+#Mesa #Jugador-Mesa, #Mesa #Cpu-Mesa, #Mesa #Jugador-Mano, #Mesa #Cpu-Mano {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 25%;
 }
 
 #Panel-Puntajes {
-  background-color: #2c3e50;
-  width: 20%;
+  background-color: #475577;
+  width: 30%;
   text-align: center;
-  margin: 4px;
+  margin: 4px 4px 4px 0px;
 }
 
 #Panel-Puntajes h1, #Panel-Puntajes h2 {
@@ -34,7 +54,7 @@
 
 #Panel-Acciones {
   margin: 4px;
-  width: 25%;
+  padding: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -45,7 +65,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #2c3e50;
+  background-color: #475577;
 }
 
 #Panel-Acciones h1 {
@@ -54,19 +74,19 @@
 }
 
 #Panel-Acciones button {
-  margin: 7px;
-  padding: 7px;
-  width: 40%;
+  margin: 2px;
+  padding: 10px;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   border-radius: 10px;
-  background-color: #3498db;
-  border: 2px solid #000;
+  background-color: #553982;
+  border: 2px solid #9365B8;
 }
 
 #Panel-Acciones button:hover {
   cursor: pointer;
-  color: #000;
-  border: 2px solid #fff;
-  background-color: #2980b9;
+  background-color: #2C82C9;
 }
 
 #Panel-Acciones button:focus {
@@ -81,39 +101,17 @@
   margin: 5px;
 }
 
-.Cartas:hover {
-  border: 2px solid red;
-  cursor: pointer;
-}
-
 .Cartas:focus {
   outline: none;
-}
-
-#Jugador-Mano, #Cpu-Mano {
-  background-color: #34495e;
-}
-
-#Jugador-Mesa, #Cpu-Mesa {
-  background-color: #27ae60;
-}
-
-#Jugador-Mesa, #Cpu-Mesa, #Jugador-Mano, #Cpu-Mano {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  border: 0.5px solid #333;
-  height: 24.8%;
 }
 
 .cartasEnMano {
   -webkit-transition: 0.5s;
   transition: 0.5s;
+}
+
+.cartasEnMano:hover {
+  border: 2px solid red;
+  cursor: pointer;
 }
 /*# sourceMappingURL=styles.css.map */
