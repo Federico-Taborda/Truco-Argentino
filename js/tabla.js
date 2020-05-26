@@ -11,8 +11,11 @@ class Tabla {
             tablero.innerHTML += `<h2 id="${nombre}">${nombre}: ${puntos}</h2>`;
         });
     };
-
+    
     actualizarPuntos() {
-        // agregar puntos a la tabla
+        this.jugadores.forEach(jugador => {
+            const { nombre, puntos } = jugador;
+            document.getElementById(`${nombre}`).textContent = `${nombre}: ${puntos}`;
+        });
     };
 };

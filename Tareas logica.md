@@ -12,7 +12,7 @@
 - [x] Sumar puntos a un jugador
 - [x] Repartir nuevamente
 - [x] Agregar jugadores a la tabla
-- [x] Actualizar puntos de los jugadores
+- [x] Actualizar puntos de los jugadores en la tabla
 - [ ] Ocultar Acciones
 - [ ] Iniciar partida
 - [ ] Iniciar mano
@@ -52,8 +52,8 @@ ___
 
 ## Cada tabla puede:
 
-- [x] Actualizar los puntos de los jugadores en la tabla
-- [ ] Dibujar los jugadores y puntos en la tabla
+- [x] Actualizar los puntos de los jugadores en la pantalla
+- [x] Dibujar los jugadores y puntos en la tabla
 
 ___
 
@@ -65,14 +65,15 @@ ___
 - [x] Textos
 - [x] Turnos
 - [x] Turno Actual
-- [x] Puntos
+- [x] Puntos (Con el tiempo  ver si es necesario)
 - [x] Genero
 - [ ] Sonido
 
 ## Cada jugador puede:
 
 - [x] Tomar Cartas
-- [ ] Rendir Mano
+- [x] Rendir Mano
+- [ ] Sumar puntos
 - [x] Aceptar
 - [x] Rechazar
 - [x] Jugar alguna acción

@@ -10,17 +10,24 @@ class Partida {
         return this.mazo.nuevoMazo();
     };
 
-    sumarPuntosAlJugador(jugador, puntos) {
-        return jugador.puntos += puntos;
+    sumarPuntosAlJugador(nombre, puntos) {
+        this.jugadores.forEach(jugador => {
+            if(jugador.nombre == nombre) {
+                jugador.puntos += puntos;
+            };
+        });
+        
+        return this.actualizarPuntosJugador(nombre, puntos);
     };
-
+    
     actualizarPuntosJugador(nombre, puntos) {
-        const { tabla } = this;
-        tabla.jugadores.forEach(jugador => {
+        this.tabla.jugadores.forEach(jugador => {
             if(jugador.nombre == nombre) {
                 jugador.puntos = puntos;
             };
         });
+
+        return this.tabla.actualizarPuntos();
     };
 
     agregarJugadoresTabla() {

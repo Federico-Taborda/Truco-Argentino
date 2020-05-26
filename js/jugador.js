@@ -113,6 +113,10 @@ class Jugador {
         
         return respuesta;
     };
+
+    sumarPuntos(partida, puntos) {
+        return partida.sumarPuntosAlJugador(this.nombre, puntos);
+    };
     
     rendirMano() {
         this.hablar(this.textos.meVoy);

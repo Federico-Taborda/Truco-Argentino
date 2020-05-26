@@ -8,7 +8,8 @@ const partida = new Partida(
 partida.mazo.nuevoMazo();
 partida.agregarJugadoresTabla();
 partida.tabla.dibujarJugadoresEnLaTabla();
-partida.jugadores[1].truco();
+
+partida.jugadores[0].sumarPuntos(partida, 2);
 
 // Botones de accion
 let btn_truco = document.getElementById("truco");
