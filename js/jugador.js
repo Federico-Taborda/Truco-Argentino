@@ -44,56 +44,56 @@ class Jugador {
     };
 
     truco() {
-        const { hablar, textos } = this;
-        hablar(textos.truco);
+        this.hablar(this.textos.truco);
+        this.generarLog(this.textos.truco);
         // truco
     };
     
     reTruco() {
-        const { hablar, textos } = this;
-        hablar(textos.quieroRetruco);
+        this.hablar(this.textos.quieroRetruco);
+        this.generarLog(this.textos.quieroRetruco);
         // retruco
     };
 
     valeCuatro() {
-        const { hablar, textos } = this;
-        hablar(textos.quieroValeCuatro);
+        this.hablar(this.textos.quieroValeCuatro);
+        this.generarLog(this.textos.quieroValeCuatro);
         // retruco
     };
     
     envido() {
-        const { hablar, textos } = this;
-        hablar(textos.envido);
+        this.hablar(this.textos.envido);
+        this.generarLog(this.textos.envido);
         // envido
     };
     
     realEnvido() {
-        const { hablar, textos } = this;
-        hablar(textos.realEnvido);
+        this.hablar(this.textos.realEnvido);
+        this.generarLog(this.textos.realEnvido);
         // real envido
     };
     
     faltaEnvido() {
-        const { hablar, textos } = this;
-        hablar(textos.faltaEnvido);
+        this.hablar(this.textos.faltaEnvido);
+        this.generarLog(this.textos.faltaEnvido);
         // falta envido
     };
     
     flor() {
-        const { hablar, textos } = this;
-        hablar(textos.flor);
+        this.hablar(this.textos.flor);
+        this.generarLog(this.textos.flor);
         // flor
     };
     
     contraFlor() {
-        const { hablar, textos } = this;
-        hablar(textos.contraFlor);
+        this.hablar(this.textos.contraFlor);
+        this.generarLog(this.textos.contraFlor);
         // contra flor
     };
     
     contraFlorAlResto() {
-        const { hablar, textos } = this;
-        hablar(textos.contraFlorAlResto);
+        this.hablar(this.textos.contraFlorAlResto);
+        this.generarLog(this.textos.contraFlorAlResto);
         // contra flor al resto
     };
     
@@ -114,14 +114,17 @@ class Jugador {
     };
     
     rendirMano() {
-        const { hablar, textos } = this;
-        hablar(textos.meVoy);
-
+        this.hablar(this.textos.meVoy);
+        this.generarLog(this.textos.meVoy);
+        
         return partida.finalizarMano();
     };
-
-    generarLog() {
-        // generar log
+    
+    generarLog(texto) {
+        const { nombre } = this;
+        let log = document.getElementById("Logs");
+        let comentario = `<p>${nombre}: ${texto}</p>`;
+        log.innerHTML += comentario;
     };
 
     hablar(dialogo) {
