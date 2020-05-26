@@ -18,7 +18,7 @@
 - [ ] Iniciar mano
 - [ ] Finalizar la partida
 - [ ] Finalizar la mano
-- [ ] Mostrar cartas de los jugadores en pantalla
+- [x] Mostrar cartas del jugador en pantalla
 - [ ] Mostrar la carta jugada
 
 ___

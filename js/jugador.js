@@ -23,18 +23,17 @@ class Jugador {
         };
     };
 
-    cartaRandom() {
+    cartaRandom(mazo) {
         // Cambiar mazo a partida.mazo
         let carta = mazo.cartas[Math.floor(Math.random() * mazo.cartas.length)];
         mazo.quitarCartaDelMazo(carta.nombre);
         return carta;
     };
 
-    async tomarCartas(){
-        const { mano, accion, cartaRandom } = this;
-        mano[0] = await accion(cartaRandom());
-        mano[1] = await accion(cartaRandom());
-        mano[2] = await accion(cartaRandom());
+    async tomarCartas(mazo){
+        this.mano[0] = await this.accion(this.cartaRandom(mazo));
+        this.mano[1] = await this.accion(this.cartaRandom(mazo));
+        this.mano[2] = await this.accion(this.cartaRandom(mazo));
     };
 
     truco() {
