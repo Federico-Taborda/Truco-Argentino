@@ -14,6 +14,7 @@
 - [x] Repartir nuevamente
 - [x] Agregar jugadores a la tabla
 - [x] Actualizar puntos de los jugadores
+- [ ] Ocultar Acciones
 - [ ] Finalizar la partida
 - [ ] Finalizar la mano
 - [ ] Mostrar cartas de los jugadores en pantalla
@@ -73,16 +74,8 @@ ___
 - [ ] Rendir Mano
 - [x] Aceptar
 - [x] Rechazar
-- [ ] Jugar Carta
-- [ ] Jugar Truco
-- [ ] Jugar Re Truco
-- [ ] Jugar Vale Cuatro
-- [ ] Jugar Envido
-- [ ] Jugar Real Envido
-- [ ] Jugar Falta Envido
-- [ ] Jugar Flor
-- [ ] Jugar Contra Flor
-- [ ] Jugar Contra Flor Al Resto
+- [ ] Jugar alguna acción
+- [ ] Escuchar alguna acción
 - [ ] Hablar
 - [ ] Generar log
 
