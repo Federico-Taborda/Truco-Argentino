@@ -1,4 +1,4 @@
-class Jugador {
+class Cpu {
     constructor(nombre, genero){
         this.nombre = nombre;
         this.genero = genero;

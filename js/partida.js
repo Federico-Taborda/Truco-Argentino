@@ -47,7 +47,7 @@ class Partida {
         return this.tabla.dibujarJugadoresEnLaTabla();
     };
 
-    mostrarCartas() {
+    mostrarCartasEnMano() {
         let manoJugador = this.jugadores[0].mano;
         document.getElementById("Jugador-Cartas-Mano-1").src = manoJugador[0].url;
         document.getElementById("Jugador-Cartas-Mano-2").src = manoJugador[1].url;
