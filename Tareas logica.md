@@ -13,13 +13,14 @@
 - [x] Repartir nuevamente
 - [x] Agregar jugadores a la tabla
 - [x] Actualizar puntos de los jugadores en la tabla
-- [ ] Ocultar Acciones
+- [x] Ocultar o Mostrar Canto
 - [ ] Iniciar partida
 - [ ] Iniciar mano
 - [ ] Finalizar la partida
 - [ ] Finalizar la mano
 - [x] Mostrar cartas del jugador en pantalla
 - [ ] Mostrar la carta jugada
+- [ ] Quitar la carta jugada de la mano
 
 ___
 
@@ -79,16 +80,6 @@ ___
 - [x] Jugar alguna acción
 - [x] Escuchar alguna acción
 - [ ] Hablar
+- [ ] Mentir
 - [x] Generar log
-
-___
-
-## El log tiene:
-
-- [x] Total de log
-- [x] Nuevos log
-
-## El log puede:
-
-- [ ] Imprimir log
 

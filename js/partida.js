@@ -47,6 +47,15 @@ class Partida {
         document.getElementById("Jugador-Cartas-Mano-3").src = manoJugador[2].url;
     };
 
+    // Si display es true se oculta sino se muestra;
+    displayCanto(id, display) {
+        if(display) {
+            document.getElementById(`${id}`).style.display = "none";
+        }else{
+            document.getElementById(`${id}`).style.display = "initial";
+        };
+    };
+
     finalizarPartida() {
         // finalizar la partida
     };

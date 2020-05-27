@@ -7,6 +7,6 @@ async function main() {
     await partida.accion(partida.jugadores[1].tomarCartas(partida.mazo))
     await partida.accion(partida.jugadores[0].tomarCartas(partida.mazo))
     partida.mostrarCartas();
-}
+};
 
 main();
