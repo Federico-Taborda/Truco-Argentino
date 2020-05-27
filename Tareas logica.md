@@ -62,7 +62,7 @@ ___
 
 - [x] Nombre 
 - [x] Cartas en mano
-- [ ] Cartas jugadas
+- [x] Cartas jugadas
 - [x] Textos
 - [x] Turnos
 - [x] Turno Actual
@@ -74,7 +74,7 @@ ___
 
 - [x] Tomar Cartas
 - [x] Rendir Mano
-- [ ] Sumar puntos
+- [x] Sumar puntos
 - [x] Aceptar
 - [x] Rechazar
 - [x] Jugar alguna acción
