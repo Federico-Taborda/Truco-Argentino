@@ -6,6 +6,11 @@ class Partida {
         this.tabla = tabla;
     };
 
+    iniciarPartida() {
+        this.mazo.nuevoMazo();
+        this.agregarJugadoresTabla();
+    };
+
     repartirOtroMazo() {
         return this.mazo.nuevoMazo();
     };
@@ -38,6 +43,8 @@ class Partida {
                 puntos: jugador.puntos
             });
         });
+
+        return this.tabla.dibujarJugadoresEnLaTabla();
     };
 
     mostrarCartas() {

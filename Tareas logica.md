@@ -14,7 +14,7 @@
 - [x] Agregar jugadores a la tabla
 - [x] Actualizar puntos de los jugadores en la tabla
 - [x] Ocultar o Mostrar Canto
-- [ ] Iniciar partida
+- [x] Iniciar partida
 - [ ] Iniciar mano
 - [ ] Finalizar la partida
 - [ ] Finalizar la mano
