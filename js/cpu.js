@@ -63,4 +63,8 @@ class Cpu extends Jugador{
         this.generarLog(this.textos.contraFlorAlResto);
         // contra flor al resto
     };
+
+    mentir() {
+        // decir mentira  
+    };
 };
