@@ -24,9 +24,9 @@ class Partida {
             this.displayElemento("quiero", true);
             this.displayElemento("no-quiero", true);
             this.displayElemento("al-mazo", true);
-            this.esperarCartasJugador("Jugador-Cartas-Mano-1", this.jugadores[0].mano[0]);
-            this.esperarCartasJugador("Jugador-Cartas-Mano-2", this.jugadores[0].mano[1]);
-            this.esperarCartasJugador("Jugador-Cartas-Mano-3", this.jugadores[0].mano[2]);
+            this.esperarCartasJugador("Jugador-Mano-1", this.jugadores[0].mano[0]);
+            this.esperarCartasJugador("Jugador-Mano-2", this.jugadores[0].mano[1]);
+            this.esperarCartasJugador("Jugador-Mano-3", this.jugadores[0].mano[2]);
         };
 
     };
@@ -84,18 +84,18 @@ class Partida {
 
     mostrarCartasEnMano() {
         let manoJugador = this.jugadores[0].mano;
-        document.getElementById("Jugador-Cartas-Mano-1").src = manoJugador[0].url;
-        document.getElementById("Jugador-Cartas-Mano-2").src = manoJugador[1].url;
-        document.getElementById("Jugador-Cartas-Mano-3").src = manoJugador[2].url;
+        document.getElementById("Jugador-Mano-1").src = manoJugador[0].url;
+        document.getElementById("Jugador-Mano-2").src = manoJugador[1].url;
+        document.getElementById("Jugador-Mano-3").src = manoJugador[2].url;
     };
 
     mostrarCartaMesa(carta) {
         if(this.jugadores[0].cartasJugadas.length == 1) {
-            document.getElementById("Jugador-Cartas-Mesa-1").src = carta.url;
+            document.getElementById("Jugador-Mesa-1").src = carta.url;
         }else if(this.jugadores[0].cartasJugadas.length == 2) {
-            document.getElementById("Jugador-Cartas-Mesa-2").src = carta.url;
+            document.getElementById("Jugador-Mesa-2").src = carta.url;
         }else if(this.jugadores[0].cartasJugadas.length == 3) {
-            document.getElementById("Jugador-Cartas-Mesa-3").src = carta.url;
+            document.getElementById("Jugador-Mesa-3").src = carta.url;
         };
     };
 
@@ -103,12 +103,15 @@ class Partida {
         if(this.jugadores[0].turnoActual == false && this.jugadores[1].turnoActual == false) {
             let random = Math.floor(Math.random() * this.jugadores.length);
             this.jugadores[random].turnoActual = true;
+            this.jugadores[random].generarLog(" Es mano");
         }else if(this.jugadores[0].turnoActual == true && this.jugadores[1].turnoActual == false) {
             this.jugadores[0].turnoActual = false;
             this.jugadores[1].turnoActual = true;
+            this.jugadores[1].generarLog(" Es mano");
         }else if(this.jugadores[0].turnoActual == false && this.jugadores[1].turnoActual == true) {
             this.jugadores[0].turnoActual = true;
             this.jugadores[1].turnoActual = false;
+            this.jugadores[0].generarLog(" Es mano");
         };
     };
 
