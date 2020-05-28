@@ -101,6 +101,10 @@
   outline: none;
 }
 
+#Panel-Acciones .cantos {
+  display: none;
+}
+
 .Cartas {
   width: 100px;
   border-radius: 10px;
