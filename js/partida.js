@@ -7,13 +7,23 @@ class Partida {
     };
 
     iniciarPartida() {
-        this.mazo.nuevoMazo();
         this.agregarJugadoresTabla();
         this.decidirMano();
+        return this.iniciarMano();
     };
+    
+    async iniciarMano() {
+        await this.accion(this.mazo.nuevoMazo());
+        await this.accion(this.reiniciarManoMesa());
+        await this.jugadores[0].tomarCartas(this.mazo);
+        await this.jugadores[1].tomarCartas(this.mazo);
+        this.mostrarCartasEnMano();
+        this.displayCanto("truco", true);
+        this.displayCanto("envido", true);
+        this.displayCanto("quiero", true);
+        this.displayCanto("no-quiero", true);
+        this.displayCanto("al-mazo", true);
 
-    iniciarMano() {
-        
     };
     
     repartirOtroMazo() {
@@ -79,12 +89,12 @@ class Partida {
         };
     };
 
-    // Si display es true se oculta sino se muestra;
+    // Si display es true se muestra sino se oculta
     displayCanto(id, display) {
         if(display) {
-            document.getElementById(`${id}`).style.display = "none";
-        }else{
             document.getElementById(`${id}`).style.display = "initial";
+        }else{
+            document.getElementById(`${id}`).style.display = "none";
         };
     };
 
@@ -93,7 +103,7 @@ class Partida {
     };
 
     finalizarMano() {
-        // finalizar la mano
+        return this.iniciarMano();
     };
 
     accion(funcion) {
