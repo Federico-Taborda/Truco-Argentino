@@ -23,7 +23,17 @@ class Partida {
         this.displayCanto("quiero", true);
         this.displayCanto("no-quiero", true);
         this.displayCanto("al-mazo", true);
+        this.esperarCartasJugador("Jugador-Cartas-Mano-1", this.jugadores[0].mano[0]);
+        this.esperarCartasJugador("Jugador-Cartas-Mano-2", this.jugadores[0].mano[1]);
+        this.esperarCartasJugador("Jugador-Cartas-Mano-3", this.jugadores[0].mano[2]);
 
+    };
+
+    esperarCartasJugador(id, carta) {
+        document.getElementById(`${id}`).addEventListener("click", () => {
+            this.jugadores[0].jugarCarta(carta);
+            this.mostrarCartaMesa(carta);
+        });
     };
     
     repartirOtroMazo() {
