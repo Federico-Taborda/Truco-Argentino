@@ -4,6 +4,13 @@ class Humano extends Jugador{
         this.nombre = nombre;
         this.genero = genero;
     };
+    
+    async jugarCarta(carta) {
+        // jugar carta
+        this.generarLog(` Tira ${carta.nombre}`);
+        let jugada = this.mano.splice(this.mano.indexOf(carta), 1);
+        this.cartasJugadas.push(jugada);
+    };
 
     truco() {
         this.hablar(this.textos.truco);
@@ -15,12 +22,6 @@ class Humano extends Jugador{
         this.escucharCanto("re-truco", this.jugarCarta);
         this.escucharCanto("al-mazo", this.jugarCarta);
     };
-
-    jugarCarta(nombre, carta) {
-        // jugar carta
-
-        console.log(nombre, `juega carta`);
-    };
     
     reTruco() {
         this.hablar(this.textos.quieroRetruco);
@@ -31,7 +32,7 @@ class Humano extends Jugador{
     valeCuatro() {
         this.hablar(this.textos.quieroValeCuatro);
         this.generarLog(this.textos.quieroValeCuatro);
-        // retruco
+        // Vale cuatro
     };
     
     envido() {

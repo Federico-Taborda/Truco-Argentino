@@ -18,21 +18,23 @@ class Partida {
         await this.jugadores[0].tomarCartas(this.mazo);
         await this.jugadores[1].tomarCartas(this.mazo);
         this.mostrarCartasEnMano();
-        this.displayElmento("truco", true);
-        this.displayElmento("envido", true);
-        this.displayElmento("quiero", true);
-        this.displayElmento("no-quiero", true);
-        this.displayElmento("al-mazo", true);
-        this.esperarCartasJugador("Jugador-Cartas-Mano-1", this.jugadores[0].mano[0]);
-        this.esperarCartasJugador("Jugador-Cartas-Mano-2", this.jugadores[0].mano[1]);
-        this.esperarCartasJugador("Jugador-Cartas-Mano-3", this.jugadores[0].mano[2]);
+        if(this.jugadores[0].turnoActual) {
+            this.displayElemento("truco", true);
+            this.displayElemento("envido", true);
+            this.displayElemento("quiero", true);
+            this.displayElemento("no-quiero", true);
+            this.displayElemento("al-mazo", true);
+            this.esperarCartasJugador("Jugador-Cartas-Mano-1", this.jugadores[0].mano[0]);
+            this.esperarCartasJugador("Jugador-Cartas-Mano-2", this.jugadores[0].mano[1]);
+            this.esperarCartasJugador("Jugador-Cartas-Mano-3", this.jugadores[0].mano[2]);
+        };
 
     };
 
     esperarCartasJugador(id, carta) {
         document.getElementById(`${id}`).addEventListener("click", () => {
             this.jugadores[0].jugarCarta(carta);
-            this.displayElmento(id, false);
+            this.displayElemento(id, false);
             this.mostrarCartaMesa(carta);
         });
     };
@@ -111,7 +113,7 @@ class Partida {
     };
 
     // Si display es true se muestra sino se oculta
-    displayElmento(id, display) {
+    displayElemento(id, display) {
         if(display) {
             document.getElementById(`${id}`).style.display = "initial";
         }else{
