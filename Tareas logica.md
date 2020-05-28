@@ -16,10 +16,10 @@
 - [x] Ocultar o Mostrar Canto
 - [x] Decidir quien juega
 - [x] Iniciar partida
-- [ ] Iniciar mano
+- [x] Iniciar mano
 - [x] Reiniciar mano y mesa
 - [ ] Finalizar la partida
-- [ ] Finalizar la mano
+- [x] Finalizar la mano
 - [x] Mostrar cartas del jugador en pantalla
 - [ ] Mostrar la carta jugada
 - [ ] Quitar la carta jugada de la mano
