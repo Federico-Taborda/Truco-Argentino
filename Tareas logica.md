@@ -21,8 +21,9 @@
 - [ ] Finalizar la partida
 - [x] Finalizar la mano
 - [x] Mostrar cartas del jugador en pantalla
-- [ ] Mostrar la carta jugada
-- [ ] Quitar la carta jugada de la mano
+- [x] Mostrar la carta jugada
+- [x] Quitar la carta jugada de la mano
+- [x] Escuchar si el jugador juega una carta
 
 ___
 

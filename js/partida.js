@@ -18,11 +18,11 @@ class Partida {
         await this.jugadores[0].tomarCartas(this.mazo);
         await this.jugadores[1].tomarCartas(this.mazo);
         this.mostrarCartasEnMano();
-        this.displayCanto("truco", true);
-        this.displayCanto("envido", true);
-        this.displayCanto("quiero", true);
-        this.displayCanto("no-quiero", true);
-        this.displayCanto("al-mazo", true);
+        this.displayElmento("truco", true);
+        this.displayElmento("envido", true);
+        this.displayElmento("quiero", true);
+        this.displayElmento("no-quiero", true);
+        this.displayElmento("al-mazo", true);
         this.esperarCartasJugador("Jugador-Cartas-Mano-1", this.jugadores[0].mano[0]);
         this.esperarCartasJugador("Jugador-Cartas-Mano-2", this.jugadores[0].mano[1]);
         this.esperarCartasJugador("Jugador-Cartas-Mano-3", this.jugadores[0].mano[2]);
@@ -32,6 +32,7 @@ class Partida {
     esperarCartasJugador(id, carta) {
         document.getElementById(`${id}`).addEventListener("click", () => {
             this.jugadores[0].jugarCarta(carta);
+            this.displayElmento(id, false);
             this.mostrarCartaMesa(carta);
         });
     };
@@ -86,6 +87,16 @@ class Partida {
         document.getElementById("Jugador-Cartas-Mano-3").src = manoJugador[2].url;
     };
 
+    mostrarCartaMesa(carta) {
+        if(this.jugadores[0].cartasJugadas.length == 1) {
+            document.getElementById("Jugador-Cartas-Mesa-1").src = carta.url;
+        }else if(this.jugadores[0].cartasJugadas.length == 2) {
+            document.getElementById("Jugador-Cartas-Mesa-2").src = carta.url;
+        }else if(this.jugadores[0].cartasJugadas.length == 3) {
+            document.getElementById("Jugador-Cartas-Mesa-3").src = carta.url;
+        };
+    };
+
     decidirMano() {
         if(this.jugadores[0].turnoActual == false && this.jugadores[1].turnoActual == false) {
             let random = Math.floor(Math.random() * this.jugadores.length);
@@ -100,7 +111,7 @@ class Partida {
     };
 
     // Si display es true se muestra sino se oculta
-    displayCanto(id, display) {
+    displayElmento(id, display) {
         if(display) {
             document.getElementById(`${id}`).style.display = "initial";
         }else{
