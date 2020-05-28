@@ -15,6 +15,12 @@ class Humano extends Jugador{
         this.escucharCanto("re-truco", this.jugarCarta);
         this.escucharCanto("al-mazo", this.jugarCarta);
     };
+
+    jugarCarta(nombre, carta) {
+        // jugar carta
+
+        console.log(nombre, `juega carta`);
+    };
     
     reTruco() {
         this.hablar(this.textos.quieroRetruco);

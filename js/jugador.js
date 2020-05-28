@@ -22,7 +22,6 @@ class Jugador {
     };
 
     cartaRandom(mazo) {
-        // Cambiar mazo a partida.mazo
         let carta = mazo.cartas[Math.floor(Math.random() * mazo.cartas.length)];
         mazo.quitarCartaDelMazo(carta.nombre);
         return carta;
@@ -32,12 +31,6 @@ class Jugador {
         this.mano[0] = await this.accion(this.cartaRandom(mazo));
         this.mano[1] = await this.accion(this.cartaRandom(mazo));
         this.mano[2] = await this.accion(this.cartaRandom(mazo));
-    };
-    
-    jugarCarta(nombre, carta) {
-        // jugar carta
-
-        console.log(nombre, `juega carta`);
     };
     
     aceptar_rechazar(respuesta) {
