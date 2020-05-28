@@ -12,8 +12,19 @@ class Partida {
         this.decidirMano();
     };
 
+    iniciarMano() {
+        
+    };
+    
     repartirOtroMazo() {
         return this.mazo.nuevoMazo();
+    };
+    
+    reiniciarManoMesa() {
+        this.jugadores.map(jugador => {
+            jugador.mano = [];
+            jugador.cartasJugadas = [];
+        });
     };
 
     sumarPuntosAlJugador(nombre, puntos) {

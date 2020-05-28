@@ -17,6 +17,7 @@
 - [x] Decidir quien juega
 - [x] Iniciar partida
 - [ ] Iniciar mano
+- [x] Reiniciar mano y mesa
 - [ ] Finalizar la partida
 - [ ] Finalizar la mano
 - [x] Mostrar cartas del jugador en pantalla
