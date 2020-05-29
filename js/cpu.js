@@ -80,4 +80,11 @@ class Cpu extends Jugador{
         let random = Math.floor(Math.random() * arr.length);
         return random;
     };
+
+    rendirMano(funcion) {
+        this.hablar(this.textos.meVoy);
+        this.generarLog(this.textos.meVoy);
+        
+        return funcion();
+    };
 };
