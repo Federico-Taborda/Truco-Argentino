@@ -70,7 +70,14 @@ class Cpu extends Jugador{
         // contra flor al resto
     };
 
+    hablar(dialogo) {
+        const speach = new SpeechSynthesisUtterance(dialogo);
+        window.speechSynthesis.speak(speach);
+    };
+
     mentir() {
-        // decir mentira  
+        let arr = [true, false];
+        let random = Math.floor(Math.random() * arr.length);
+        return random;
     };
 };

@@ -71,7 +71,6 @@ ___
 - [x] Turno Actual
 - [x] Puntos (Con el tiempo  ver si es necesario)
 - [x] Genero
-- [ ] Sonido
 
 ## Cada jugador puede:
 
@@ -82,7 +81,7 @@ ___
 - [x] Rechazar
 - [x] Jugar alguna acción
 - [x] Escuchar alguna acción
-- [ ] Hablar
-- [ ] Mentir
+- [x] Hablar
+- [x] Mentir
 - [x] Generar log
 

@@ -70,11 +70,6 @@ class Jugador {
         log.innerHTML += comentario;
     };
 
-    hablar(dialogo) {
-        const speach = new SpeechSynthesisUtterance(dialogo);
-        window.speechSynthesis.speak(speach);
-    };
-
     accion(funcion) {
         return new Promise((resolve, reject) => {
             resolve(funcion);
