@@ -19,7 +19,7 @@ class Partida {
         await this.jugadores[1].tomarCartas(this.mazo);
         await this.accion(this.mostrarCartasEnMano());
 
-        if(this.jugadores[0].turnoActual) {
+        if(this.jugadores[0].turnoActual) {/* 
             this.displayElemento("truco", true);
             this.displayElemento("envido", true);
             this.displayElemento("quiero", true);
@@ -27,11 +27,29 @@ class Partida {
             this.displayElemento("al-mazo", true);
             this.esperarCartasJugador("Jugador-Mano-1", this.jugadores[0].mano[0]);
             this.esperarCartasJugador("Jugador-Mano-2", this.jugadores[0].mano[1]);
-            this.esperarCartasJugador("Jugador-Mano-3", this.jugadores[0].mano[2]);
+            this.esperarCartasJugador("Jugador-Mano-3", this.jugadores[0].mano[2]); */
+            this.juegaJugador(
+                ["truco", "envido", "quiero", "no-quiero", "al-mazo"], 
+                ["Jugador-Mano-1", "Jugador-Mano-2", "Jugador-Mano-3"]
+            );
         }else if(this.jugadores[1].turnoActual) {
 
         };
     };
+
+    juegaJugador(cantos, cartas) {
+        for(let i = 0; i < cantos.length; i++) {
+            this.displayElemento(cantos[i], true);
+        };
+        
+        for(let j = 0; j < cantos.length; j++) {
+            this.esperarCantosJugador(cantos[j]);
+        };
+        
+        for(let k = 0; k < cartas.length; k++) {
+            this.esperarCartasJugador(cartas[k], this.jugadores[0].mano[k]);
+        };
+    }; 
     
     esperarCartasJugador(id, carta) {
         document.getElementById(`${id}`).addEventListener("click", () => {
@@ -39,6 +57,48 @@ class Partida {
             this.displayElemento(id, false);
             this.mostrarCartaMesa(carta);
         });
+    };
+    
+    esperarCantosJugador(id) {
+        document.getElementById(`${id}`).addEventListener("click", () => {
+            if(id == "truco") {
+                this.jugadores[0].truco();
+
+            }else if(id == "re-truco") {
+                this.jugadores[0].reTruco();
+
+            }else if(id == "vale-cuatro") {
+                this.jugadores[0].valeCuatro();
+                
+            }else if(id == "envido") {
+                this.jugadores[0].envido();
+                
+            }else if(id == "real-envido") {
+                this.jugadores[0].realEnvido();
+                
+            }else if(id == "falta-envido") {
+                this.jugadores[0].faltaEnvido();
+                
+            }else if(id == "flor") {
+                this.jugadores[0].flor();
+                
+            }else if(id == "contra-flor") {
+                this.jugadores[0].contraFlor();
+                
+            }else if(id == "flor-contra-al-resto") {
+                this.jugadores[0].contraFlorAlResto();
+                
+            }else if(id == "quiero") {
+                this.jugadores[0].aceptar_rechazar(true);
+                
+            }else if(id == "no-quiero") {
+                this.jugadores[0].aceptar_rechazar(false);
+                
+            }else if(id == "al-mazo") {
+                this.jugadores[0].rendirMano();
+                this.finalizarMano();
+            };
+        });    
     };
     
     repartirOtroMazo() {
@@ -50,7 +110,7 @@ class Partida {
             jugador.mano = [];
             jugador.cartasJugadas = [];
         });
-    };
+    };   
 
     sumarPuntosAlJugador(nombre, puntos) {
         this.jugadores.forEach(jugador => {
