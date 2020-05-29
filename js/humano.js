@@ -24,49 +24,41 @@ class Humano extends Jugador{
     };
     
     reTruco() {
-        this.hablar(this.textos.quieroRetruco);
         this.generarLog(this.textos.quieroRetruco);
         // retruco
     };
 
     valeCuatro() {
-        this.hablar(this.textos.quieroValeCuatro);
         this.generarLog(this.textos.quieroValeCuatro);
         // Vale cuatro
     };
     
     envido() {
-        this.hablar(this.textos.envido);
         this.generarLog(this.textos.envido);
         // envido
     };
     
     realEnvido() {
-        this.hablar(this.textos.realEnvido);
         this.generarLog(this.textos.realEnvido);
         // real envido
     };
     
     faltaEnvido() {
-        this.hablar(this.textos.faltaEnvido);
         this.generarLog(this.textos.faltaEnvido);
         // falta envido
     };
     
     flor() {
-        this.hablar(this.textos.flor);
         this.generarLog(this.textos.flor);
         // flor
     };
     
     contraFlor() {
-        this.hablar(this.textos.contraFlor);
         this.generarLog(this.textos.contraFlor);
         // contra flor
     };
     
     contraFlorAlResto() {
-        this.hablar(this.textos.contraFlorAlResto);
         this.generarLog(this.textos.contraFlorAlResto);
         // contra flor al resto
     };
