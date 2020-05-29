@@ -10,6 +10,7 @@ class Humano extends Jugador{
         this.generarLog(` Tira ${carta.nombre}`);
         let jugada = this.mano.splice(this.mano.indexOf(carta), 1);
         this.cartasJugadas.push(jugada);
+        this.turnos--;
     };
 
     truco() {
