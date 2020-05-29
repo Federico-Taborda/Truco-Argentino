@@ -14,14 +14,7 @@ class Humano extends Jugador{
     };
 
     truco() {
-        this.hablar(this.textos.truco);
         this.generarLog(this.textos.truco);
-
-        this.escucharCanto("quiero", this.jugarCarta);
-        this.escucharCanto("no-quiero", this.jugarCarta);
-        this.escucharCanto("envido", this.jugarCarta);
-        this.escucharCanto("re-truco", this.jugarCarta);
-        this.escucharCanto("al-mazo", this.jugarCarta);
     };
     
     reTruco() {
@@ -62,5 +55,9 @@ class Humano extends Jugador{
     contraFlorAlResto() {
         this.generarLog(this.textos.contraFlorAlResto);
         // contra flor al resto
+    };
+
+    rendirMano() {
+        this.generarLog(this.textos.meVoy);
     };
 };
