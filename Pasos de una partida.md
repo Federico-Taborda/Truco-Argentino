@@ -6,9 +6,9 @@
 - [x] 1. Iniciar mano.
 - [x] 3. Repartir Cartas.
 - [x] 4. Mostrar cartas en mano.
-- [ ] 5. Mostrar cantos. (Truco, Envido, Quiero, No quiero, Me voy, Flor).
-- [ ] 6. Escuchar si el jugador juega o canta.
+- [x] 5. Mostrar cantos. (Truco, Envido, Quiero, No quiero, Me voy).
+- [x] 6. Escuchar si el jugador juega o canta.
         - Si canta envido:
-            - [ ] a. Mostrar cantos().
+            - [x] a. Mostrar cantos().
 - [ ] 7.  
 
