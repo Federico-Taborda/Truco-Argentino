@@ -35,11 +35,12 @@ class Jugador {
     
     aceptar_rechazar(respuesta) {
         // Si es true se acepta el canto, si es false se rechaza.
-        const { textos } = this;
         if(respuesta) {
-            this.hablar(textos.quiero)
+            this.generarLog("Quiero");
+            return true;
         }else{
-            this.hablar(textos.noQuiero)
+            this.generarLog("No quiero");
+            return false;
         };
         
         return respuesta;
@@ -47,13 +48,6 @@ class Jugador {
 
     sumarPuntos(partida, puntos) {
         return partida.sumarPuntosAlJugador(this.nombre, puntos);
-    };
-    
-    rendirMano() {
-        this.hablar(this.textos.meVoy);
-        this.generarLog(this.textos.meVoy);
-        
-        return partida.finalizarMano();
     };
 
     escucharCanto(elemento, funcion) {
