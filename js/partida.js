@@ -17,7 +17,8 @@ class Partida {
         await this.accion(this.reiniciarManoMesa());
         await this.jugadores[0].tomarCartas(this.mazo);
         await this.jugadores[1].tomarCartas(this.mazo);
-        this.mostrarCartasEnMano();
+        await this.accion(this.mostrarCartasEnMano());
+
         if(this.jugadores[0].turnoActual) {
             this.displayElemento("truco", true);
             this.displayElemento("envido", true);
@@ -27,10 +28,11 @@ class Partida {
             this.esperarCartasJugador("Jugador-Mano-1", this.jugadores[0].mano[0]);
             this.esperarCartasJugador("Jugador-Mano-2", this.jugadores[0].mano[1]);
             this.esperarCartasJugador("Jugador-Mano-3", this.jugadores[0].mano[2]);
+        }else if(this.jugadores[1].turnoActual) {
+
         };
-
     };
-
+    
     esperarCartasJugador(id, carta) {
         document.getElementById(`${id}`).addEventListener("click", () => {
             this.jugadores[0].jugarCarta(carta);
@@ -96,6 +98,14 @@ class Partida {
             document.getElementById("Jugador-Mesa-2").src = carta.url;
         }else if(this.jugadores[0].cartasJugadas.length == 3) {
             document.getElementById("Jugador-Mesa-3").src = carta.url;
+        };
+    };
+
+    compararCartasMesa(carta1, carta2) {
+        if(carta1.valor > carta2.valor) {
+            return console.log(carta1);
+        }else if(carta1.valor < carta2.valor) {
+            return console.log(carta2);
         };
     };
 

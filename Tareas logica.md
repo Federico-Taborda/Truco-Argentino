@@ -18,6 +18,7 @@
 - [x] Iniciar partida
 - [x] Iniciar mano
 - [x] Reiniciar mano y mesa
+- [ ] Comparar cartas
 - [ ] Finalizar la partida
 - [x] Finalizar la mano
 - [x] Mostrar cartas del jugador en pantalla
