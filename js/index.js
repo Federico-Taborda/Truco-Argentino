@@ -1,11 +1,14 @@
 const config = {
+    nombre: "Fede",
+    genero: "Hombre",
     puntos: 30
 };
 
-const partida = new Partida(
-    [new Humano("Fede", "Hombre"), new Cpu("CPU", "Mujer")],
+const partida = new Partida({ 
+        jugador: new Humano(config.nombre, config.genero),
+        cpu: new Cpu("CPU", "Mujer")},
     new Mazo(), 
-    config.puntos, 
+    config.puntos,
     new Tabla());
 
 async function main() {
