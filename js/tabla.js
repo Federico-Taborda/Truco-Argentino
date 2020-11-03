@@ -1,3 +1,5 @@
+// Dibuja los jugadores en la tabla y actualiza los puntajes
+
 class Tabla {
     constructor() {
         this.puntos = 0; // 15p o 30p
