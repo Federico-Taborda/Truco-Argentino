@@ -15,19 +15,19 @@ class Partida {
     async iniciarMano() {
         await this.accion(this.mazo.nuevoMazo());
         await this.accion(this.reiniciarManoMesa());
-        await this.jugadores[0].tomarCartas(this.mazo);
-        await this.jugadores[1].tomarCartas(this.mazo);
+        await this.jugadores.jugador.tomarCartas(this.mazo);
+        await this.jugadores.cpu.tomarCartas(this.mazo);
         await this.accion(this.mostrarCartasEnMano());
 
-        if(this.jugadores[0].turnoActual) {/* 
+        if(this.jugadores.jugador.turnoActual) {/* 
             this.displayElemento("truco", true);
             this.displayElemento("envido", true);
             this.displayElemento("quiero", true);
             this.displayElemento("no-quiero", true);
             this.displayElemento("al-mazo", true);
-            this.esperarCartasJugador("Jugador-Mano-1", this.jugadores[0].mano[0]);
-            this.esperarCartasJugador("Jugador-Mano-2", this.jugadores[0].mano[1]);
-            this.esperarCartasJugador("Jugador-Mano-3", this.jugadores[0].mano[2]); */
+            this.esperarCartasJugador("Jugador-Mano-1", this.jugadores.jugador.mano[0]);
+            this.esperarCartasJugador("Jugador-Mano-2", this.jugadores.jugador.mano[1]);
+            this.esperarCartasJugador("Jugador-Mano-3", this.jugadores.jugador.mano[2]); */
             this.juegaJugador(
                 ["truco", "envido", "quiero", "no-quiero", "al-mazo"], 
                 ["Jugador-Mano-1", "Jugador-Mano-2", "Jugador-Mano-3"]
@@ -47,13 +47,13 @@ class Partida {
         };
         
         for(let k = 0; k < cartas.length; k++) {
-            this.esperarCartasJugador(cartas[k], this.jugadores[0].mano[k]);
+            this.esperarCartasJugador(cartas[k], this.jugadores.jugador.mano[k]);
         };
     }; 
     
     esperarCartasJugador(id, carta) {
         document.getElementById(`${id}`).addEventListener("click", () => {
-            this.jugadores[0].jugarCarta(carta);
+            this.jugadores.jugador.jugarCarta(carta);
             this.displayElemento(id, false);
             this.mostrarCartaMesa(carta);
         });
@@ -62,40 +62,40 @@ class Partida {
     esperarCantosJugador(id) {
         document.getElementById(`${id}`).addEventListener("click", () => {
             if(id == "truco") {
-                this.jugadores[0].truco();
+                this.jugadores.jugador.truco();
 
             }else if(id == "re-truco") {
-                this.jugadores[0].reTruco();
+                this.jugadores.jugador.reTruco();
 
             }else if(id == "vale-cuatro") {
-                this.jugadores[0].valeCuatro();
+                this.jugadores.jugador.valeCuatro();
                 
             }else if(id == "envido") {
-                this.jugadores[0].envido();
+                this.jugadores.jugador.envido();
                 
             }else if(id == "real-envido") {
-                this.jugadores[0].realEnvido();
+                this.jugadores.jugador.realEnvido();
                 
             }else if(id == "falta-envido") {
-                this.jugadores[0].faltaEnvido();
+                this.jugadores.jugador.faltaEnvido();
                 
             }else if(id == "flor") {
-                this.jugadores[0].flor();
+                this.jugadores.jugador.flor();
                 
             }else if(id == "contra-flor") {
-                this.jugadores[0].contraFlor();
+                this.jugadores.jugador.contraFlor();
                 
             }else if(id == "flor-contra-al-resto") {
-                this.jugadores[0].contraFlorAlResto();
+                this.jugadores.jugador.contraFlorAlResto();
                 
             }else if(id == "quiero") {
-                this.jugadores[0].aceptar_rechazar(true);
+                this.jugadores.jugador.aceptar_rechazar(true);
                 
             }else if(id == "no-quiero") {
-                this.jugadores[0].aceptar_rechazar(false);
+                this.jugadores.jugador.aceptar_rechazar(false);
                 
             }else if(id == "al-mazo") {
-                this.jugadores[0].rendirMano();
+                this.jugadores.jugador.rendirMano();
                 this.finalizarMano();
             };
         });    
@@ -106,18 +106,18 @@ class Partida {
     };
     
     reiniciarManoMesa() {
-        this.jugadores.map(jugador => {
-            jugador.mano = [];
-            jugador.cartasJugadas = [];
-        });
+        for(let jugador in this.jugadores) {
+            this.jugadores[jugador].mano = [];
+            this.jugadores[jugador].cartasJugadas = [];
+        };
     };   
-
+    
     sumarPuntosAlJugador(nombre, puntos) {
-        this.jugadores.forEach(jugador => {
-            if(jugador.nombre == nombre) {
-                jugador.puntos += puntos;
+        for(let jugador in this.jugadores) {
+            if(this.jugadores[jugador].nombre == nombre) {
+                this.jugadores[jugador].puntos += puntos;
             };
-        });
+        };
         
         return this.actualizarPuntosJugador(nombre, puntos);
     };
@@ -133,30 +133,26 @@ class Partida {
     };
 
     agregarJugadoresTabla() {
-        const { jugadores, tabla } = this;
-        jugadores.forEach(jugador => {
-            tabla.jugadores.push({
-                nombre: jugador.nombre,
-                puntos: jugador.puntos
-            });
-        });
+        const { jugador, cpu } = this.jugadores;
+        this.tabla.jugadores.push({ nombre: jugador.nombre, puntos: jugador.puntos });
+        this.tabla.jugadores.push({ nombre: cpu.nombre, puntos: cpu.puntos });
 
         return this.tabla.dibujarJugadoresEnLaTabla();
     };
 
     mostrarCartasEnMano() {
-        let manoJugador = this.jugadores[0].mano;
+        let manoJugador = this.jugadores.jugador.mano;
         document.getElementById("Jugador-Mano-1").src = manoJugador[0].url;
         document.getElementById("Jugador-Mano-2").src = manoJugador[1].url;
         document.getElementById("Jugador-Mano-3").src = manoJugador[2].url;
     };
 
     mostrarCartaMesa(carta) {
-        if(this.jugadores[0].cartasJugadas.length == 1) {
+        if(this.jugadores.jugador.cartasJugadas.length == 1) {
             document.getElementById("Jugador-Mesa-1").src = carta.url;
-        }else if(this.jugadores[0].cartasJugadas.length == 2) {
+        }else if(this.jugadores.jugador.cartasJugadas.length == 2) {
             document.getElementById("Jugador-Mesa-2").src = carta.url;
-        }else if(this.jugadores[0].cartasJugadas.length == 3) {
+        }else if(this.jugadores.jugador.cartasJugadas.length == 3) {
             document.getElementById("Jugador-Mesa-3").src = carta.url;
         };
     };
@@ -170,18 +166,17 @@ class Partida {
     };
 
     decidirMano() {
-        if(this.jugadores[0].turnoActual == false && this.jugadores[1].turnoActual == false) {
-            let random = Math.floor(Math.random() * this.jugadores.length);
-            this.jugadores[random].turnoActual = true;
-            this.jugadores[random].generarLog(" Es mano");
-        }else if(this.jugadores[0].turnoActual == true && this.jugadores[1].turnoActual == false) {
-            this.jugadores[0].turnoActual = false;
-            this.jugadores[1].turnoActual = true;
-            this.jugadores[1].generarLog(" Es mano");
-        }else if(this.jugadores[0].turnoActual == false && this.jugadores[1].turnoActual == true) {
-            this.jugadores[0].turnoActual = true;
-            this.jugadores[1].turnoActual = false;
-            this.jugadores[0].generarLog(" Es mano");
+        if(this.jugadores.jugador.turnoActual == false && this.jugadores.cpu.turnoActual == false) {
+            this.jugadores.jugador.turnoActual = true;
+            this.jugadores.jugador.generarLog(" Es mano");
+        }else if(this.jugadores.jugador.turnoActual == true && this.jugadores.cpu.turnoActual == false) {
+            this.jugadores.jugador.turnoActual = false;
+            this.jugadores.cpu.turnoActual = true;
+            this.jugadores.cpu.generarLog(" Es mano");
+        }else if(this.jugadores.jugador.turnoActual == false && this.jugadores.cpu.turnoActual == true) {
+            this.jugadores.jugador.turnoActual = true;
+            this.jugadores.cpu.turnoActual = false;
+            this.jugadores.jugador.generarLog(" Es mano");
         };
     };
 
