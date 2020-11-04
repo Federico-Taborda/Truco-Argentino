@@ -4,6 +4,7 @@ class Mazo {
     };
 
     nuevoMazo() {
+        this.cartas = [];
         return this.cartas = [
             new Carta("1 de Espada", "Espadas", 14, 1, 1,"Img/espadas_1.jpg"),
             new Carta("1 de Basto", "Bastos", 13, 1, 1, "Img/bastos_1.jpg"),
