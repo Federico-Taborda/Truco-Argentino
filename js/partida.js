@@ -4,10 +4,10 @@ class Partida {
         this.mazo = mazo;
         this.puntos = puntos;
         this.tabla = tabla;
+        this.agregarJugadoresTabla();
     };
 
     iniciarPartida() {
-        this.agregarJugadoresTabla();
         this.decidirMano();
         return this.iniciarMano();
     };
@@ -32,20 +32,23 @@ class Partida {
                 ["truco", "envido", "quiero", "no-quiero", "al-mazo"], 
                 ["Jugador-Mano-1", "Jugador-Mano-2", "Jugador-Mano-3"]
             );
-        }else if(this.jugadores[1].turnoActual) {
-
+        }else if(this.jugadores.cpu.turnoActual) {
+            // Aqui jugaria el cpu
         };
     };
 
     juegaJugador(cantos, cartas) {
+        // Muestra los cantos disponibles en el tablero
         for(let i = 0; i < cantos.length; i++) {
             this.displayElemento(cantos[i], true);
         };
         
+        // Escucha los cantos del jugador
         for(let j = 0; j < cantos.length; j++) {
             this.esperarCantosJugador(cantos[j]);
         };
         
+        // Escucha que carta clickea el jugador
         for(let k = 0; k < cartas.length; k++) {
             this.esperarCartasJugador(cartas[k], this.jugadores.jugador.mano[k]);
         };
@@ -101,12 +104,13 @@ class Partida {
         });    
     };
     
+    // Renicia las manos y las cartas jugadas de los jugadores
     reiniciarManoMesa() {
         for(let jugador in this.jugadores) {
             this.jugadores[jugador].mano = [];
             this.jugadores[jugador].cartasJugadas = [];
         };
-    };   
+    };
     
     sumarPuntosAlJugador(nombre, puntos) {
         for(let jugador in this.jugadores) {
@@ -118,6 +122,7 @@ class Partida {
         return this.actualizarPuntosJugador(nombre, puntos);
     };
     
+    // Actualiza los puntos del jugador en la tabla
     actualizarPuntosJugador(nombre, puntos) {
         this.tabla.jugadores.forEach(jugador => {
             if(jugador.nombre == nombre) {
@@ -128,6 +133,7 @@ class Partida {
         return this.tabla.actualizarPuntos();
     };
 
+    // Muestra los jugadores en la tabla
     agregarJugadoresTabla() {
         const { jugador, cpu } = this.jugadores;
         this.tabla.jugadores.push({ nombre: jugador.nombre, puntos: jugador.puntos });
@@ -136,6 +142,7 @@ class Partida {
         return this.tabla.dibujarJugadoresEnLaTabla();
     };
 
+    // Muestra en pantalla las cartas del jugador
     mostrarCartasEnMano() {
         let manoJugador = this.jugadores.jugador.mano;
         document.getElementById("Jugador-Mano-1").src = manoJugador[0].url;
@@ -143,6 +150,7 @@ class Partida {
         document.getElementById("Jugador-Mano-3").src = manoJugador[2].url;
     };
 
+    // Mueve a la mesa la carta jugada del jugador
     mostrarCartaMesa(carta) {
         if(this.jugadores.jugador.cartasJugadas.length == 1) {
             document.getElementById("Jugador-Mesa-1").src = carta.url;
