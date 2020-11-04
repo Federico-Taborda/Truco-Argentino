@@ -19,7 +19,7 @@ class Partida {
         await this.jugadores.cpu.tomarCartas(this.mazo);
         await this.accion(this.mostrarCartasEnMano());
 
-        if(this.jugadores.jugador.turnoActual) {/* 
+        if(this.jugadores.jugador.turnoActual) {
             this.displayElemento("truco", true);
             this.displayElemento("envido", true);
             this.displayElemento("quiero", true);
@@ -27,7 +27,7 @@ class Partida {
             this.displayElemento("al-mazo", true);
             this.esperarCartasJugador("Jugador-Mano-1", this.jugadores.jugador.mano[0]);
             this.esperarCartasJugador("Jugador-Mano-2", this.jugadores.jugador.mano[1]);
-            this.esperarCartasJugador("Jugador-Mano-3", this.jugadores.jugador.mano[2]); */
+            this.esperarCartasJugador("Jugador-Mano-3", this.jugadores.jugador.mano[2]);
             this.juegaJugador(
                 ["truco", "envido", "quiero", "no-quiero", "al-mazo"], 
                 ["Jugador-Mano-1", "Jugador-Mano-2", "Jugador-Mano-3"]
@@ -99,10 +99,6 @@ class Partida {
                 this.finalizarMano();
             };
         });    
-    };
-    
-    repartirOtroMazo() {
-        return this.mazo.nuevoMazo();
     };
     
     reiniciarManoMesa() {
