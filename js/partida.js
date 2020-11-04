@@ -4,9 +4,23 @@ class Partida {
         this.mazo = mazo;
         this.puntos = puntos;
         this.tabla = tabla;
+        this.cantos = [
+            "truco",
+            "re-truco",
+            "vale-cuatro",
+            "envido",
+            "real-envido",
+            "falta-envido",
+            "flor",
+            "contra-flor",
+            "flor-contra-al-resto",
+            "quiero", 
+            "no-quiero",
+            "al-mazo"
+        ];
         this.display = new Display();
         this.agregarJugadoresTabla();
-        this.esperarCantosJugador()
+        this.esperarCantosJugador();
     };
 
     iniciarPartida() {
@@ -45,25 +59,10 @@ class Partida {
         });
     };
     
-    esperarCantosJugador(id) {
-        let cantos = [
-            "truco",
-            "re-truco",
-            "vale-cuatro",
-            "envido",
-            "real-envido",
-            "falta-envido",
-            "flor",
-            "contra-flor",
-            "flor-contra-al-resto",
-            "quiero", 
-            "no-quiero",
-            "al-mazo"
-        ];
-
-        for(let i = 0; i < cantos.length; i++) {
-            document.getElementById(`${cantos[i]}`).addEventListener("click", () => {
-                switch (cantos[i]) {
+    esperarCantosJugador() {
+        for(let i = 0; i < this.cantos.length; i++) {
+            document.getElementById(`${this.cantos[i]}`).addEventListener("click", () => {
+                switch (this.cantos[i]) {
                     case "truco": this.jugadores.jugador.truco(); break;
     
                     case "re-truco": this.jugadores.jugador.reTruco(); break;
@@ -96,6 +95,13 @@ class Partida {
                 };
             });
         };
+    };
+    
+    // Deja de escuchar los cantos
+    detenerCantosJugador() {
+        for(let i = 0; i < this.cantos.length; i++) {
+            document.getElementById(`${this.cantos[i]}`).removeEventListener("click", () => {});
+        };     
     };
     
     // Renicia las manos y las cartas jugadas de los jugadores
@@ -164,6 +170,7 @@ class Partida {
     };
 
     finalizarMano() {
+        this.detenerCantosJugador();
         this.display.displayCartasMano(true);
         this.display.displayCartasMesa(false);
         return this.iniciarMano();
