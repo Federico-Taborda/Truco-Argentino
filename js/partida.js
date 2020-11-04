@@ -4,6 +4,7 @@ class Partida {
         this.mazo = mazo;
         this.puntos = puntos;
         this.tabla = tabla;
+        this.display = new Display();
         this.agregarJugadoresTabla();
     };
 
@@ -64,42 +65,36 @@ class Partida {
     
     esperarCantosJugador(id) {
         document.getElementById(`${id}`).addEventListener("click", () => {
-            if(id == "truco") {
-                this.jugadores.jugador.truco();
+            switch (id) {
+                case "truco": this.jugadores.jugador.truco(); break;
 
-            }else if(id == "re-truco") {
-                this.jugadores.jugador.reTruco();
+                case "re-truco": this.jugadores.jugador.reTruco(); break;
 
-            }else if(id == "vale-cuatro") {
-                this.jugadores.jugador.valeCuatro();
-                
-            }else if(id == "envido") {
-                this.jugadores.jugador.envido();
-                
-            }else if(id == "real-envido") {
-                this.jugadores.jugador.realEnvido();
-                
-            }else if(id == "falta-envido") {
-                this.jugadores.jugador.faltaEnvido();
-                
-            }else if(id == "flor") {
-                this.jugadores.jugador.flor();
-                
-            }else if(id == "contra-flor") {
-                this.jugadores.jugador.contraFlor();
-                
-            }else if(id == "flor-contra-al-resto") {
-                this.jugadores.jugador.contraFlorAlResto();
-                
-            }else if(id == "quiero") {
-                this.jugadores.jugador.aceptar_rechazar(true);
-                
-            }else if(id == "no-quiero") {
-                this.jugadores.jugador.aceptar_rechazar(false);
-                
-            }else if(id == "al-mazo") {
-                this.jugadores.jugador.rendirMano();
-                this.finalizarMano();
+                case "vale-cuatro": this.jugadores.jugador.valeCuatro(); break;
+
+                case "envido": this.jugadores.jugador.envido(); break;
+
+                case "real-envido": this.jugadores.jugador.realEnvido(); break;
+
+                case "falta-envido": this.jugadores.jugador.faltaEnvido(); break;
+
+                case "flor": this.jugadores.jugador.flor(); break;
+
+                case "contra-flor": this.jugadores.jugador.contraFlor();break;
+
+                case "flor-contra-al-resto": this.jugadores.jugador.contraFlorAlResto(); break;
+
+                case "quiero": this.jugadores.jugador.aceptar_rechazar(true); break;
+
+                case "no-quiero": this.jugadores.jugador.aceptar_rechazar(false); break;
+
+                case "al-mazo": 
+                    this.jugadores.jugador.rendirMano();
+                    this.finalizarMano();
+                    break;
+            
+                default:
+                    break;
             };
         });    
     };
@@ -122,7 +117,7 @@ class Partida {
         return this.actualizarPuntosJugador(nombre, puntos);
     };
     
-    // Actualiza los puntos del jugador en la tabla
+    // Actualiza los puntos del jugador
     actualizarPuntosJugador(nombre, puntos) {
         this.tabla.jugadores.forEach(jugador => {
             if(jugador.nombre == nombre) {
