@@ -6,7 +6,6 @@ class Humano extends Jugador{
     };
     
     async jugarCarta(carta) {
-        // jugar carta
         this.generarLog(` Tira ${carta.nombre}`);
         let jugada = this.mano.splice(this.mano.indexOf(carta), 1);
         this.cartasJugadas.push(jugada);
