@@ -6,6 +6,7 @@ class Partida {
         this.tabla = tabla;
         this.display = new Display();
         this.agregarJugadoresTabla();
+        this.esperarCantosJugador()
     };
 
     iniciarPartida() {
@@ -23,22 +24,13 @@ class Partida {
         
         if(this.jugadores.jugador.turnoActual) {
             this.display.displayTruco();
-            this.juegaJugador(
-                ["truco", "envido", "falta-envido", "al-mazo"],
-                ["Jugador-Mano-1", "Jugador-Mano-2", "Jugador-Mano-3"]
-            );
+            this.cartasJugablesJugador(["Jugador-Mano-1", "Jugador-Mano-2", "Jugador-Mano-3"]);
         }else if(this.jugadores.cpu.turnoActual) {
             // Aqui jugaria el cpu
         };
     };
 
-    juegaJugador(cantos, cartas) {
-        // Escucha los cantos del jugador
-        for(let j = 0; j < cantos.length; j++) {
-            this.esperarCantosJugador(cantos[j]);
-        };
-        
-        // Escucha que carta clickea el jugador
+    cartasJugablesJugador(cartas) {
         for(let k = 0; k < cartas.length; k++) {
             this.esperarCartasJugador(cartas[k], this.jugadores.jugador.mano[k]);
         };
@@ -54,39 +46,56 @@ class Partida {
     };
     
     esperarCantosJugador(id) {
-        document.getElementById(`${id}`).addEventListener("click", () => {
-            switch (id) {
-                case "truco": this.jugadores.jugador.truco(); break;
+        let cantos = [
+            "truco",
+            "re-truco",
+            "vale-cuatro",
+            "envido",
+            "real-envido",
+            "falta-envido",
+            "flor",
+            "contra-flor",
+            "flor-contra-al-resto",
+            "quiero", 
+            "no-quiero",
+            "al-mazo"
+        ];
 
-                case "re-truco": this.jugadores.jugador.reTruco(); break;
-
-                case "vale-cuatro": this.jugadores.jugador.valeCuatro(); break;
-
-                case "envido": this.jugadores.jugador.envido(); break;
-
-                case "real-envido": this.jugadores.jugador.realEnvido(); break;
-
-                case "falta-envido": this.jugadores.jugador.faltaEnvido(); break;
-
-                case "flor": this.jugadores.jugador.flor(); break;
-
-                case "contra-flor": this.jugadores.jugador.contraFlor();break;
-
-                case "flor-contra-al-resto": this.jugadores.jugador.contraFlorAlResto(); break;
-
-                case "quiero": this.jugadores.jugador.aceptar_rechazar(true); break;
-
-                case "no-quiero": this.jugadores.jugador.aceptar_rechazar(false); break;
-
-                case "al-mazo": 
-                    this.jugadores.jugador.rendirMano();
-                    this.finalizarMano();
-                    break;
-            
-                default:
-                    break;
-            };
-        });    
+        for(let i = 0; i < cantos.length; i++) {
+            document.getElementById(`${cantos[i]}`).addEventListener("click", () => {
+                switch (cantos[i]) {
+                    case "truco": this.jugadores.jugador.truco(); break;
+    
+                    case "re-truco": this.jugadores.jugador.reTruco(); break;
+    
+                    case "vale-cuatro": this.jugadores.jugador.valeCuatro(); break;
+    
+                    case "envido": this.jugadores.jugador.envido(); break;
+    
+                    case "real-envido": this.jugadores.jugador.realEnvido(); break;
+    
+                    case "falta-envido": this.jugadores.jugador.faltaEnvido(); break;
+    
+                    case "flor": this.jugadores.jugador.flor(); break;
+    
+                    case "contra-flor": this.jugadores.jugador.contraFlor();break;
+    
+                    case "flor-contra-al-resto": this.jugadores.jugador.contraFlorAlResto(); break;
+    
+                    case "quiero": this.jugadores.jugador.aceptar_rechazar(true); break;
+    
+                    case "no-quiero": this.jugadores.jugador.aceptar_rechazar(false); break;
+    
+                    case "al-mazo": 
+                        this.jugadores.jugador.rendirMano();
+                        this.finalizarMano();
+                        break;
+                
+                    default:
+                        break;
+                };
+            });
+        };
     };
     
     // Renicia las manos y las cartas jugadas de los jugadores
