@@ -14,23 +14,17 @@ class Partida {
     };
     
     async iniciarMano() {
+        this.display.displayCartasMesa(true);
         await this.accion(this.mazo.nuevoMazo());
         await this.accion(this.reiniciarManoMesa());
         await this.jugadores.jugador.tomarCartas(this.mazo);
         await this.jugadores.cpu.tomarCartas(this.mazo);
         await this.accion(this.display.mostrarCartasEnMano(this.jugadores.jugador));
-
+        
         if(this.jugadores.jugador.turnoActual) {
-            this.display.displayElemento("truco", true);
-            this.display.displayElemento("envido", true);
-            this.display.displayElemento("quiero", true);
-            this.display.displayElemento("no-quiero", true);
-            this.display.displayElemento("al-mazo", true);
-            this.esperarCartasJugador("Jugador-Mano-1", this.jugadores.jugador.mano[0]);
-            this.esperarCartasJugador("Jugador-Mano-2", this.jugadores.jugador.mano[1]);
-            this.esperarCartasJugador("Jugador-Mano-3", this.jugadores.jugador.mano[2]);
+            this.display.displayTruco();
             this.juegaJugador(
-                ["truco", "envido", "quiero", "no-quiero", "al-mazo"], 
+                ["truco", "envido", "falta-envido", "al-mazo"],
                 ["Jugador-Mano-1", "Jugador-Mano-2", "Jugador-Mano-3"]
             );
         }else if(this.jugadores.cpu.turnoActual) {
@@ -39,11 +33,6 @@ class Partida {
     };
 
     juegaJugador(cantos, cartas) {
-        // Muestra los cantos disponibles en el tablero
-        for(let i = 0; i < cantos.length; i++) {
-            this.display.displayElemento(cantos[i], true);
-        };
-        
         // Escucha los cantos del jugador
         for(let j = 0; j < cantos.length; j++) {
             this.esperarCantosJugador(cantos[j]);
@@ -55,11 +44,12 @@ class Partida {
         };
     }; 
     
-    esperarCartasJugador(id, carta) {
-        document.getElementById(`${id}`).addEventListener("click", () => {
-            this.jugadores.jugador.jugarCarta(carta);
-            this.display.displayElemento(id, false);
-            this.display.mostrarCartaMesa(carta, this.jugadores.jugador);
+    // Si una carta es jugada se oculta de la mano y se muestra en el tablero
+    esperarCartasJugador(cartaDisplay, cartaMano) {
+        document.getElementById(cartaDisplay).addEventListener("click", () => {
+            this.jugadores.jugador.jugarCarta(cartaMano);
+            this.display.displayElemento(cartaDisplay, false);
+            this.display.mostrarCartaMesa(cartaMano, this.jugadores.jugador);
         });
     };
     
@@ -137,8 +127,6 @@ class Partida {
         return this.tabla.dibujarJugadoresEnLaTabla();
     };
 
-   
-
     compararCartasMesa(carta1, carta2) {
         if(carta1.valor > carta2.valor) {
             return console.log(carta1);
@@ -167,9 +155,12 @@ class Partida {
     };
 
     finalizarMano() {
+        this.display.displayCartasMano(true);
+        this.display.displayCartasMesa(false);
         return this.iniciarMano();
     };
 
+    // Para ejecuciones que nesecitens tiempo de ejecucion
     accion(funcion) {
         return new Promise((resolve, reject) => {
             resolve(funcion);
