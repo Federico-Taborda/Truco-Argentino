@@ -31,7 +31,7 @@ class Display {
         };
     };
 
-    // Muestra en pantalla las cartas del jugador
+    // Muestra en pantalla las cartas en mano del jugador
     mostrarCartasEnMano(jugador) {
         let manoJugador = jugador.mano;
         document.getElementById("Jugador-Mano-1").src = manoJugador[0].url;

@@ -42,8 +42,6 @@ class Jugador {
             this.generarLog("No quiero");
             return false;
         };
-        
-        return respuesta;
     };
 
     sumarPuntos(partida, puntos) {
