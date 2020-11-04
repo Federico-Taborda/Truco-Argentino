@@ -5,29 +5,29 @@ class Display {
     // Muestra u oculta todas las cartas de la mesa
     displayCartasMesa(display) {
         if(display) {
-            document.getElementById("Jugador-Mesa-1").style.display = "initial"
-            document.getElementById("Jugador-Mesa-2").style.display = "initial"
-            document.getElementById("Jugador-Mesa-3").style.display = "initial"
-            document.getElementById("Jugador-Mesa-1").src = "none"
-            document.getElementById("Jugador-Mesa-2").src = "none"
-            document.getElementById("Jugador-Mesa-3").src = "none"
+            document.getElementById("Jugador-Mesa-1").style.display = "initial";
+            document.getElementById("Jugador-Mesa-2").style.display = "initial";
+            document.getElementById("Jugador-Mesa-3").style.display = "initial";
+            document.getElementById("Jugador-Mesa-1").src = "";
+            document.getElementById("Jugador-Mesa-2").src = "";
+            document.getElementById("Jugador-Mesa-3").src = "";
         }else{
-            document.getElementById("Jugador-Mesa-1").style.display = "none"
-            document.getElementById("Jugador-Mesa-2").style.display = "none"
-            document.getElementById("Jugador-Mesa-3").style.display = "none"
+            document.getElementById("Jugador-Mesa-1").style.display = "none";
+            document.getElementById("Jugador-Mesa-2").style.display = "none";
+            document.getElementById("Jugador-Mesa-3").style.display = "none";
         };
     };
     
     // Muestra u oculta todas las cartas de la mano
     displayCartasMano(display) {
         if(display) {
-            document.getElementById("Jugador-Mano-1").style.display = "initial"
-            document.getElementById("Jugador-Mano-2").style.display = "initial"
-            document.getElementById("Jugador-Mano-3").style.display = "initial"
+            document.getElementById("Jugador-Mano-1").style.display = "initial";
+            document.getElementById("Jugador-Mano-2").style.display = "initial";
+            document.getElementById("Jugador-Mano-3").style.display = "initial";
         }else{
-            document.getElementById("Jugador-Mano-1").style.display = "none"
-            document.getElementById("Jugador-Mano-2").style.display = "none"
-            document.getElementById("Jugador-Mano-3").style.display = "none"
+            document.getElementById("Jugador-Mano-1").style.display = "none";
+            document.getElementById("Jugador-Mano-2").style.display = "none";
+            document.getElementById("Jugador-Mano-3").style.display = "none";
         };
     };
 
@@ -78,4 +78,4 @@ class Display {
     displayFlor() {
 
     };
-}
+};
