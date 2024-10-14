@@ -1,9 +1,9 @@
 class Partida {
-    constructor(jugadores, mazo, puntos, tabla) {
-        this.jugadores = jugadores;
+    constructor(player_one, player_two, mazo, puntos) {
+        this.player_one = player_one;
+        this.player_two = player_two;
         this.mazo = mazo;
         this.puntos = puntos;
-        this.tabla = tabla;
         this.cantos = [
             "truco",
             "re-truco",
@@ -18,9 +18,6 @@ class Partida {
             "no-quiero",
             "al-mazo"
         ];
-        this.display = new Display();
-        this.agregarJugadoresTabla();
-        this.esperarCantosJugador();
     };
 
     iniciarPartida() {
@@ -29,17 +26,12 @@ class Partida {
     };
     
     async iniciarMano() {
-        this.display.displayCartasMesa(true);
-        await this.accion(this.mazo.nuevoMazo());
-        await this.accion(this.reiniciarManoMesa());
-        await this.jugadores.jugador.tomarCartas(this.mazo);
-        await this.jugadores.cpu.tomarCartas(this.mazo);
-        await this.accion(this.display.mostrarCartasEnMano(this.jugadores.jugador));
+        this.player_one.mano = this.mazo.repartirCartas;
+        this.player_two.mano = this.mazo.repartirCartas;
         
-        if(this.jugadores.jugador.turnoActual) {
-            this.display.displayTruco();
-            this.cartasJugablesJugador(["Jugador-Mano-1", "Jugador-Mano-2", "Jugador-Mano-3"]);
-        }else if(this.jugadores.cpu.turnoActual) {
+        if(this.player_one.turnoActual) {
+            
+        }else if(this.player_two.turnoActual) {
             // Aqui jugaria el cpu
         };
     };
@@ -151,17 +143,17 @@ class Partida {
     };
 
     decidirMano() {
-        if(this.jugadores.jugador.turnoActual == false && this.jugadores.cpu.turnoActual == false) {
-            this.jugadores.jugador.turnoActual = true;
-            this.jugadores.jugador.generarLog(" Es mano");
+        if(this.player_one.turnoActual == false && this.player_two.turnoActual == false) {
+            this.player_one.turnoActual = true;
+            this.player_one.generarLog("es mano");
         }else if(this.jugadores.jugador.turnoActual == true && this.jugadores.cpu.turnoActual == false) {
-            this.jugadores.jugador.turnoActual = false;
-            this.jugadores.cpu.turnoActual = true;
-            this.jugadores.cpu.generarLog(" Es mano");
-        }else if(this.jugadores.jugador.turnoActual == false && this.jugadores.cpu.turnoActual == true) {
-            this.jugadores.jugador.turnoActual = true;
-            this.jugadores.cpu.turnoActual = false;
-            this.jugadores.jugador.generarLog(" Es mano");
+            this.player_twoturnoActual = false;
+            this.player_two.cpu.turnoActual = true;
+            this.player_two.generarLog("es mano");
+        }else if(this.player_one.turnoActual == false && this.player_two.turnoActual == true) {
+            this.player_one.turnoActual = true;
+            this.player_two.turnoActual = false;
+            this.player_one.generarLog("es mano");
         };
     };
 

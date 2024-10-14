@@ -1,8 +1,8 @@
 class Carta {
-    constructor(nombre, palo, valor, numero, puntosEnvido, url, sonido) {
+    constructor(nombre, palo, precedencia, numero, puntosEnvido, url, sonido) {
         this.nombre = nombre;
         this.palo = palo;
-        this.valor = valor;
+        this.precedencia = precedencia;
         this.numero = numero;
         this.puntosEnvido = puntosEnvido;
         this.url = url;

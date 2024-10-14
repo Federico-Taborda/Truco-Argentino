@@ -1,88 +1,74 @@
 # Tareas Lógica
 
-## Cada partida tiene: 
+## Partida: 
 
-- [x] Jugadores
-- [x] Mazo
-- [x] Puntos
-- [x] Tabla
+- [x] Propiedad: Jugadores
+- [x] Propiedad: Mazo
+- [x] Propiedad: Tabla
 
-## Cada partida puede:
+- [x] Metodo: Sumar puntos a un jugador
+- [x] Metodo: Repartir nuevamente
+- [x] Metodo: Decidir quien juega
+- [x] Metodo: Iniciar partida
+- [x] Metodo: Iniciar mano
+- [x] Metodo: Reiniciar mano y mesa
+- [ ] Metodo: Comparar cartas
+- [ ] Metodo: Finalizar la partida
+- [x] Metodo: Finalizar la mano
+- [x] Metodo: Escuchar si el jugador juega una carta
 
-- [x] Sumar puntos a un jugador
-- [x] Repartir nuevamente
-- [x] Agregar jugadores a la tabla
-- [x] Actualizar puntos de los jugadores en la tabla
-- [x] Ocultar o Mostrar Canto
-- [x] Decidir quien juega
-- [x] Iniciar partida
-- [x] Iniciar mano
-- [x] Reiniciar mano y mesa
-- [ ] Comparar cartas
-- [ ] Finalizar la partida
-- [x] Finalizar la mano
-- [x] Mostrar cartas del jugador en pantalla
-- [x] Mostrar la carta jugada
-- [x] Quitar la carta jugada de la mano
-- [x] Escuchar si el jugador juega una carta
+## Carta
 
-___
+- [x] Propiedad: Nombre
+- [x] Propiedad: Valor
+- [x] Propiedad: Valor Propio
+- [x] Propiedad: Palo
+- [x] Propiedad: Url
+- [x] Propiedad: Puntos para el envido
+- [ ] Propiedad: Sonido
 
-## Cada carta tiene:
+## Mazo:
 
-- [x] Nombre
-- [x] Valor
-- [x] Valor Propio
-- [x] Palo
-- [x] Url
-- [x] Puntos para el envido
-- [ ] Sonido
+- [x] Propiedad: Cartas
 
-___
+- [x] Metodo: Repartir cartas
 
-## El mazo tiene:
+## Tabla:
 
-- [x] Cartas
+- [x] Propiedad: 15p o 30p
+- [x] Propiedad: Jugadores
 
-## El mazo puede:
-
-- [x] Quitar cartas
-
-___
-
-## Cada tabla de puntos tiene:
-
-- [x] 15p o 30p
-- [x] Jugadores
-
-## Cada tabla puede:
-
-- [x] Actualizar los puntos de los jugadores en la pantalla
-- [x] Dibujar los jugadores y puntos en la tabla
-
-___
+- [x] Metodo: Actualizar los puntos de los jugadores en la pantalla
+- [x] Metodo: Dibujar los jugadores y puntos en la tabla
 
 ## Cada jugador tiene:
 
-- [x] Nombre 
-- [x] Cartas en mano
-- [x] Cartas jugadas
-- [x] Textos
-- [x] Turnos
-- [x] Turno Actual
-- [x] Puntos (Con el tiempo  ver si es necesario)
-- [x] Genero
+- [x] Propiedad: Nombre 
+- [x] Propiedad: Cartas en mano
+- [x] Propiedad: Cartas jugadas
+- [x] Propiedad: Textos
+- [x] Propiedad: Turno Actual
+- [x] Propiedad: Puntos (Con el tiempo  ver si es necesario)
 
-## Cada jugador puede:
+- [x] Metodo: Tomar Cartas
+- [x] Metodo: Rendir Mano
+- [x] Metodo: Sumar puntos
+- [x] Metodo: Aceptar
+- [x] Metodo: Rechazar
+- [x] Metodo: Jugar alguna acción
+- [x] Metodo: Escuchar alguna acción
+- [x] Metodo: Hablar
+- [x] Metodo: Mentir
+- [x] Metodo: Generar log
 
-- [x] Tomar Cartas
-- [x] Rendir Mano
-- [x] Sumar puntos
-- [x] Aceptar
-- [x] Rechazar
-- [x] Jugar alguna acción
-- [x] Escuchar alguna acción
-- [x] Hablar
-- [x] Mentir
-- [x] Generar log
+## Tabla
 
+- [ ] Propiedad: Puntos
+- [ ] Propiedad: Actualizar puntos de los jugadores de la tabla
+
+## Render
+- [ ] Metodo: Mostrar cartas del jugador en pantalla
+- [ ] Metodo: Mostrar la carta jugada
+- [ ] Metodo: Ocultar o Mostrar Canto
+- [ ] Metodo: Actualizar puntos de los jugadores en la tabla
+- [ ] Metodo: Quitar la carta jugada de la mano

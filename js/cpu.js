@@ -1,8 +1,7 @@
 class Cpu extends Jugador{
-    constructor(nombre, genero) {
+    constructor(nombre) {
         super();
         this.nombre = nombre;
-        this.genero = genero;
     };
 
     truco() {

@@ -1,6 +1,6 @@
 class Jugador {
     constructor() {
-        this.mano = [];
+        this.mano = {};
         this.cartasJugadas = [];
         this.turnos = 3;
         this.turnoActual = false;
@@ -19,18 +19,6 @@ class Jugador {
             contraFlorAlResto: "Contra Flor al Resto",
             meVoy: "Me voy al mazo"
         };
-    };
-
-    cartaRandom(mazo) {
-        let carta = mazo.cartas[Math.floor(Math.random() * mazo.cartas.length)];
-        mazo.quitarCartaDelMazo(carta.nombre);
-        return carta;
-    };
-
-    async tomarCartas(mazo){
-        this.mano[0] = await this.accion(this.cartaRandom(mazo));
-        this.mano[1] = await this.accion(this.cartaRandom(mazo));
-        this.mano[2] = await this.accion(this.cartaRandom(mazo));
     };
     
     aceptar_rechazar(respuesta) {

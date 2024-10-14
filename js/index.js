@@ -1,15 +1,12 @@
-const config = {
-    nombre: "Fede",
-    genero: "Hombre",
-    puntos: 30
-};
 
-const partida = new Partida({ 
-        jugador: new Humano(config.nombre, config.genero),
-        cpu: new Cpu("CPU", "Mujer")},
+
+const partida = new Partida(
+    new Humano("Federico"), 
+    new Cpu("CPU"),
     new Mazo(), 
-    config.puntos,
-    new Tabla());
+    30,
+    new Tabla()
+);
 
 async function main() {
     partida.iniciarPartida();
