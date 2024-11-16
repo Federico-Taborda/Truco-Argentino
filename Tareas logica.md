@@ -5,8 +5,8 @@
 - [x] Propiedad: Jugadores
 - [x] Propiedad: Mazo
 - [x] Propiedad: Tabla
+- [x] Propiedad: Ronda (se nesecita ganar 2 de 3)
 
-- [x] Metodo: Sumar puntos a un jugador
 - [x] Metodo: Repartir nuevamente
 - [x] Metodo: Decidir quien juega
 - [x] Metodo: Iniciar partida
@@ -33,14 +33,6 @@
 
 - [x] Metodo: Repartir cartas
 
-## Tabla:
-
-- [x] Propiedad: 15p o 30p
-- [x] Propiedad: Jugadores
-
-- [x] Metodo: Actualizar los puntos de los jugadores en la pantalla
-- [x] Metodo: Dibujar los jugadores y puntos en la tabla
-
 ## Cada jugador tiene:
 
 - [x] Propiedad: Nombre 
@@ -55,16 +47,21 @@
 - [x] Metodo: Sumar puntos
 - [x] Metodo: Aceptar
 - [x] Metodo: Rechazar
-- [x] Metodo: Jugar alguna acción
-- [x] Metodo: Escuchar alguna acción
+- [x] Metodo: Jugar alguna canto
+- [x] Metodo: Escuchar alguna canto
 - [x] Metodo: Hablar
 - [x] Metodo: Mentir
+
+## Log
+
 - [x] Metodo: Generar log
 
 ## Tabla
 
-- [ ] Propiedad: Puntos
-- [ ] Propiedad: Actualizar puntos de los jugadores de la tabla
+- [ ] Propiedad: Puntos (malas: 15, buenas:30)
+
+- [x] Metodo: Actualizar los puntos de los jugadores en la pantalla
+- [x] Metodo: Sumar puntos a un jugador
 
 ## Render
 - [ ] Metodo: Mostrar cartas del jugador en pantalla
@@ -72,3 +69,4 @@
 - [ ] Metodo: Ocultar o Mostrar Canto
 - [ ] Metodo: Actualizar puntos de los jugadores en la tabla
 - [ ] Metodo: Quitar la carta jugada de la mano
+- [x] Metodo: Dibujar los jugadores y puntos en la tabla
