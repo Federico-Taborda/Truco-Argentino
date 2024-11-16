@@ -12,9 +12,11 @@
 
 .cartasEnMano {
     transition: 0.5s;
-
+    
     &:hover {
+        transform: translateY(-10px);
         border: 2px solid red;
+        box-shadow: 5px 5px 5px #475577;
         cursor: pointer;
     }
 
